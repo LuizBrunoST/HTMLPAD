@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>HTMLPAD++</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Montserrat:500|Playfair+Display+SC:900|Raleway:400,600|Electrolize|Handlee" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        <script src=https://code.jquery.com/jquery-3.4.0.js></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.4/ace.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/htmlpad++.css">
+        <script src="js/func.js"></script>
+    </head>
+    
+    <body>
+    <div class="code-container">
+    <div class="main-menu" id="main-menu">
+        <div class="header" id="header">
+            <h3>HTMLPAD++ <i style="font-size:12px;font-family:'Electrolize';"> V 2.8</i></h3>
+            <span class="options" id="opt-btn"><i class="fas fa-ellipsis-v"></i></span>
+            <button class="redo" id="redo-btn"><i class="fas fa-share"></i></button>
+            <button class="undo" id="undo-btn"><i class="fas fa-reply"></i></button>
+            </div>
+        <div class="editor-btns" id="ed-btns">
+            <button id="#html" value="0%">HTML</button>
+            <button id="#css" value="25%">CSS</button>
+            <button id="#js" value="50%">JS</button>
+            <button id="#output" value="75%" name="frame">OUTPUT</button>
+            <div class="active-bar" id="active-bar"></div>
+            </div>
+        <div class="editors" id="editors">
+            <div id="html" class="code"></div>
+            <div id="css" class="code"></div>
+            <div id="js" class="code"></div> 
+            <iframe id="output" frameborder="0"></iframe>
+        </div>
+        <div class="overlay" id="overlay"></div>
+        <div class="options-item" id="opt-item">
+                <ul>
+                    <li class="dark-theme">Tema escuro<pre style="display:inline-block">    </pre><i class="fas fa-check-square" id="dark-theme"></i></li>
+                    <li id="add-resource">Add Resources</li>
+                    <li id="f-size">Tamanho da fonte</li>
+                    <li id="reset-code">Limpar</li>
+                    <li id="reset-code-all">Limpar tudo</li>
+                    <li id="code-settings">config</li>
+                </ul>
+            </div>
+            <div class="popup add-resources" id="add-res">
+            <span class="popup-title">Adicionar script externo / folha de estilo</span>
+            <div class="popup-desc">
+             <!--label style="font-size:14px;margin:5px 0" for="res-path">file name/path:</label-->  
+           <form>
+           <input type="text" id="res-path" placeholder="Ex: style.css   ou   https://mywebsite.com/css/style.css" required="true">
+           </form> 
+             
+            <span style="font-size:9px;display:inline-block;line-height:17px;margin:0 0 5px 0;text-align:left;background:transparent;color:red" id="inp-err">(digite o nome do arquivo ou o caminho do arquivo <b>Por exemplo: style.css ou https://mywebsite.com/css/style.css</b>)</span>
+            <span style="display:inline-block;margin-left:60px" id="type-script" class="type-sel" value="script"><i class="fas fa-check-circle" style="font-size:13px"></i> script</span>
+            <span style="margin-left:50px;display:inline-block;" id="type-css" class="type-sel" value="css"><i class="far fa-circle" style="font-size:13px"></i> stylesheet</span><br />
+            <button id="add-res-btn">Add</button><br /><br />
+            <span><b>Stylesheets</b></span>
+            <div class="stylesheet" id="css-res"></div>
+            <span><b>Scripts</b></span>
+            <div class="script" id="js-res"></div>
+            </div>
+            <div class="popup-footer" id="arf-btn">fechar</div>
+            </div>
+            
+            <div class="popup font-size" id="font-size">
+            <span class="popup-title">Font Size</span>
+            <div class="popup-desc">
+            <input type="range" class="fs" id="fs" min="8" max="14" value="10">
+            <div style="position:absolute;height:3.5px;top:66.5px;background:#1cd3d3;left:35px;" id="font-size-ind"></div> 
+            <div class="sample-font-view" id="samp-fv">font size 10pt</div>
+            </div>
+            <div class="popup-footer" id="fs-btn">fechar</div>
+               </div>
+            
+            <footer><i>Made by : </i><a href="https://www.facebook.com/LUMATECHAPPSEGAMES"> LUMATECH APP's e GAMES</a> 2020 &copy;</footer>
+            <!--div class="easy-toolbar"></div-->
+           </div>
+           <div class="code-settings">
+           <header style="font-size:1.3em;padding:15px 20px;background:#2e2e2e;"><span class="settings-back-btn" id="sett-back-btn" style="margin-right:20px;color:#fff;"><i class="fas fa-arrow-left" > </i></span> <b style="color:#fff;"> Settings</b></header>
+           <section>
+            Em breve....
+           </section>
+            </div>
+           </div>
+    </body>
+    <script>   
+    </script>
+</html>

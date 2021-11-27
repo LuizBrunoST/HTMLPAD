@@ -1,2 +1,9 @@
-# HTMLPAD__2.8
-[APP] - HTMLPAD++2.8 : Editor em HTML
+# HTMLPAD ++
+[APP] - HTMLPAD++ : Editor em HTML<br>
+
+
+- [x] Aplicativo Android.
+- [ ] Desktop Windows.
+- [x] Versão WebAplication.
+
+# Log
