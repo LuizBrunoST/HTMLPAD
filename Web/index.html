@@ -6,26 +6,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="lib/css/estilo.css">
+    <link rel="stylesheet" href="lib/css/estilo.css?v=0">
     <link rel="stylesheet" href="lib/css/thema_Dark.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="lib/css/w3.css">
     <script src="lib/js/jquery-3.6.0.min.js"></script>
+    <script src="lib/js/w3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.4/ace.js"></script>
 </head>
 <body class="w3-theme-l1">
-    <div class="w3-bar w3-theme">
+    <div class="w3-bar w3-theme w3-animate-top">
         <span class="w3-bar-item">HTMLPAD++ 2.9</span>
     </div>
-    <div class="w3-theme-l1" style="height: 100px;">
-        
+    <div class="w3-theme-l1 w3-animate-top" style="height: 100px;">
+        header
     </div>
-    <div class="w3-card-4 w3-theme-l1" style="width: 300px;">
+    <div class="w3-card-4 w3-theme-l1 w3-animate-left" style="width: 300px; height: 452px; display: inline-block; position: absolute; overflow: scroll;">
         <div class="w3-bar w3-center w3-theme">
             <span class="w3-xxlarge">Guia</span>
         </div>
+
     </div>
 
-    <div class="">
+    <div class="w3-card-4 w3-theme-l1 w3-animate-right" style="display: inline-block; width: 800px; position: relative; margin-left: 310px;">
+        <div class="w3-bar w3-theme">
+            <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme"><i class="fa fa-html5"></i> html</span>
+            <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme"><i class="fa fa-css3"></i> css</span>
+            <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme"><i class="">?</i> javascript</span>
+
+            <span class="w3-bar-item w3-right w3-xlarge w3-button w3-theme-action" id="btn-preview"><i class="fa fa-gears"></i> Preview</span>
+        </div>
+        <div id="html"></div>
+        <div id="css"></div>
+        <div id="javascript"></div>
+    </div>
+
+    <iframe id="preview"></iframe>
+
+    <div class="w3-bar w3-animate-bottom w3-center w3-theme">
+        <p>HTMLPAD++ v2.9 <i>powred by: <b>LUMATECH APPS E GAMES</b> &copy; 2021</i> - Todos os direitos reservados.</p>
     </div>
 </body>
 </html>
+<script>
+    window.onload = function() {
+	html = ace.edit("html")
+	html.setTheme("ace/theme/monokai")
+	html.session.setMode("ace/mode/html")
+    html.session.setValue("<p>Olá, mundo!</p>")
+}
+$("#btn-preview").click(function() {
+    $("#preview").attr("srcdoc",html.getValue("\n"))
+})
+
+</script>
+</body>

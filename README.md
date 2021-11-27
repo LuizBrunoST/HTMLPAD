@@ -6,4 +6,7 @@
 - [ ] Desktop Windows.
 - [x] Versão WebAplication.
 
+# Tecnologias
+* Javascript (jQuery,w3.js)
+* CSS (w3.css)
 # Log
