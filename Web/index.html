@@ -17,6 +17,10 @@
 <body class="w3-theme-l1">
     <div class="w3-bar w3-theme w3-animate-top">
         <span class="w3-bar-item">HTMLPAD++ 2.9</span>
+
+        <div class="w3-right">
+            <span class="w3-button w3-red w3-hover-red" id="btn-fechar-janela">&times;</span>
+        </div>
     </div>
     <div class="w3-theme-l1 w3-animate-top" style="height: 100px;">
         header
@@ -41,7 +45,17 @@
         <div id="javascript"></div>
     </div>
 
-    <iframe id="preview"></iframe>
+    <div class="w3-modal" id="modal-preview">
+        <div class="w3-modal-content">
+            <div class="w3-bar w3-theme w3-center">
+                <span class="w3-xlarge">Resultado</span>
+
+                <span class="w3-btn w3-red w3-right" id="btn-fechar-preview">&times;</span>
+                <span class="w3-btn w3-blue w3-right" id="btn-salvar"><i class="fa fa-save"></i></span>
+            </div>
+            <iframe id="preview" class="preview"></iframe>
+        </div>
+    </div>
 
     <div class="w3-bar w3-animate-bottom w3-center w3-theme">
         <p>HTMLPAD++ v2.9 <i>powred by: <b>LUMATECH APPS E GAMES</b> &copy; 2021</i> - Todos os direitos reservados.</p>
@@ -55,8 +69,29 @@
 	html.session.setMode("ace/mode/html")
     html.session.setValue("<p>Olá, mundo!</p>")
 }
+$("#btn-fechar-janela").click( function () {
+    confirmacao = confirm("Deseja fechar a janela atual?")
+    if (confirmacao == true) {
+        close()
+    } else {
+
+    }
+})
+
+
 $("#btn-preview").click(function() {
     $("#preview").attr("srcdoc",html.getValue("\n"))
+    $("#modal-preview").show(1000)
+})
+$("#btn-fechar-preview").click( function() {
+    $("#modal-preview").hide(1000)
+})
+$("#btn-salvar").click( function () {
+    var element = document.createElement('a');
+    code=document.getElementById('preview').srcdoc;
+    element.setAttribute('href', 'data:text/text;charset=utf-8,' +      encodeURI(code));
+    element.setAttribute('download', "index.html");
+    element.click();
 })
 
 </script>
