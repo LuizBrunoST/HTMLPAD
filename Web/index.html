@@ -16,7 +16,7 @@
 </head>
 <body class="w3-theme-l1">
     <div class="w3-bar w3-theme w3-animate-top">
-        <span class="w3-bar-item">HTMLPAD++ 2.9</span>
+        <span class="w3-bar-item">HTMLPAD++ <i>v2.9</i></span>
 
         <div class="w3-right">
             <span class="w3-button w3-red w3-hover-red" id="btn-fechar-janela">&times;</span>
@@ -29,14 +29,14 @@
         <div class="w3-bar w3-center w3-theme">
             <span class="w3-xxlarge">Guia</span>
         </div>
-
+        
     </div>
 
     <div class="w3-card-4 w3-theme-l1 w3-animate-right" style="display: inline-block; width: 800px; position: relative; margin-left: 310px;">
         <div class="w3-bar w3-theme">
-            <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme"><i class="fa fa-html5"></i> html</span>
-            <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme"><i class="fa fa-css3"></i> css</span>
-            <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme"><i class="">?</i> javascript</span>
+            <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme" id="btn-html"><i class="fa fa-html5"></i> html</span>
+            <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme" id="btn-css"><i class="fa fa-css3"></i> css</span>
+            <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme" id="btn-javascript"><i class="">?</i> javascript</span>
 
             <span class="w3-bar-item w3-right w3-xlarge w3-button w3-theme-action" id="btn-preview"><i class="fa fa-gears"></i> Preview</span>
         </div>
@@ -63,11 +63,25 @@
 </body>
 </html>
 <script>
-    window.onload = function() {
+window.onload = function() {
 	html = ace.edit("html")
 	html.setTheme("ace/theme/monokai")
 	html.session.setMode("ace/mode/html")
     html.session.setValue("<p>Olá, mundo!</p>")
+
+    css = ace.edit("css")
+	css.setTheme("ace/theme/monokai")
+	css.session.setMode("ace/mode/css")
+    css.session.setValue(
+`body {
+    background: #fff;
+    color: #000;
+}`)
+
+    javascript = ace.edit("javascript")
+	javascript.setTheme("ace/theme/monokai")
+	javascript.session.setMode("ace/mode/javascript")
+    javascript.session.setValue("")
 }
 $("#btn-fechar-janela").click( function () {
     confirmacao = confirm("Deseja fechar a janela atual?")
@@ -79,11 +93,34 @@ $("#btn-fechar-janela").click( function () {
 })
 
 
+$("#btn-html").click( function () {
+    w3.show("#html")
+    w3.hide("#css")
+    w3.hide("#javascript")
+})
+$("#btn-css").click( function () {
+    w3.show("#css")
+    w3.hide("#html")
+    w3.hide("#javascript")
+})
+$("#btn-javascript").click( function () {
+    w3.show("#javascript")
+    w3.hide("#html")
+    w3.hide("#css")
+})
+
+
 $("#btn-preview").click(function() {
-    $("#preview").attr("srcdoc",html.getValue("\n"))
+    document.querySelectorAll(".ace_gutter")[0].hidden = true
+    document.querySelectorAll(".ace_gutter")[1].hidden = true
+    document.querySelectorAll(".ace_gutter")[2].hidden = true
+    $("#preview").attr("srcdoc", "<style>" + css.getValue("\n") + "</style>" + html.getValue("\n") + "<script>" + javascript.getValue("\n") + "<" + "/script>")
     $("#modal-preview").show(1000)
 })
 $("#btn-fechar-preview").click( function() {
+    document.querySelectorAll(".ace_gutter")[0].hidden = false
+    document.querySelectorAll(".ace_gutter")[1].hidden = false
+    document.querySelectorAll(".ace_gutter")[2].hidden = false
     $("#modal-preview").hide(1000)
 })
 $("#btn-salvar").click( function () {
