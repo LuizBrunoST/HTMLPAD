@@ -33,6 +33,7 @@
 </head>
 <body class="w3-theme-l1">
     <div class="w3-bar w3-theme w3-animate-top">
+        <img class="w3-left" src="icones/android-icon-36x36.png">
         <span class="w3-bar-item" id="nomeApp"></span>
 
         <div class="w3-right">
@@ -75,6 +76,7 @@
             <div class="w3-dropdown-content w3-bar-block" style="position: fixed;">
                 <a href="#" class="w3-bar-item w3-button">Aplicativo iOs/android</a>
                 <a href="#" class="w3-bar-item w3-button">Site</a>
+                <a href="#" class="w3-bar-item w3-button">Editor fullscreen</a>
             </div>
         </div>
         <div class="w3-dropdown-hover">
@@ -84,34 +86,8 @@
             </div>
         </div>  
     </div>
-    <div class="w3-card-4 w3-theme-l1 w3-animate-left" style="width: 300px; height: 452px; display: inline-block; position: absolute; overflow: scroll;">
-        <div class="w3-bar w3-center w3-theme">
-            <span class="w3-xxlarge">Guia</span>
-        </div>
-        <div id="guia-html">
-            <button class="accordion w3-button">Referencia</button>
-            <div class="panel w3-animate-left">
-                <input class="w3-input w3-theme" type="text" placeholder="Pesquisar" oninput="w3.filterHTML('#guia-html-lista', 'li', this.value)">
-                <div w3-include-html="guia-html.html" class="guia-html-lista w3-ul" id="guia-html-lista"></div>
-            </div>
-        </div>
 
-        <div id="guia-css">
-            <button class="accordion w3-button">Type Conteudo</button>
-            <div class="panel w3-animate-left">
-                <p>guia css</p>
-            </div>
-        </div>
-
-        <div id="guia-javascript">
-            <button class="accordion w3-button">Type Conteudo</button>
-            <div class="panel w3-animate-left">
-                <p>guia javascript</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="w3-card-4 w3-theme-l1 w3-animate-right" style="display: inline-block; width: 800px; position: relative; margin-left: 310px;">
+    <div class="w3-card-4 w3-theme-l1 w3-animate-right" style="width: 100%; position: relative;">
         <div class="w3-bar w3-theme">
             <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme" id="btn-html"><i class="fa fa-html5"></i> html</span>
             <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme" id="btn-css"><i class="fa fa-css3"></i> css</span>

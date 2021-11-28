@@ -3,32 +3,23 @@ body {
 }
 #html {
     position: relative;
-    width: 800px;
-    height: 400px;
+    width: 100%;
+    min-height: 450px;
 }
 #css {
     position: relative;
-    width: 800px;
-    height: 400px;
+    width: 100%;
+    min-height: 450px;
 
     display: none;
 }
 #javascript {
     position: relative;
-    width: 800px;
-    height: 400px;
+    width: 100%;
+    min-height: 450px;
 
     display: none;
 }
-
-#guia-html, #guia-css #guia-javascript {background: transparent;}
-#guia-html {display: block;}
-#guia-css {display: none;}
-#guia-javascript {display: none;}
-    .accordion {transition: 0.4s; width: 100%;}
-    .ativado, .accordion:hover {background: #ccc !important; color: #000 !important;}
-        .panel {display: none; overflow: hidden;}
-
 
 .preview {
     width: 100%;

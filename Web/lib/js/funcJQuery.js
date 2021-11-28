@@ -14,25 +14,16 @@ $("#btn-fechar-janela").click( function () {
 
 $("#btn-html").click( function () {
     w3.show("#html")
-    w3.show("#guia-html")
-    w3.hide("#guia-css")
-    w3.hide("#guia-javascript")
     w3.hide("#css")
     w3.hide("#javascript")
 })
 $("#btn-css").click( function () {
     w3.show("#css")
-    w3.show("#guia-css")
-    w3.hide("#guia-html")
-    w3.hide("#guia-javascript")
     w3.hide("#html")
     w3.hide("#javascript")
 })
 $("#btn-javascript").click( function () {
     w3.show("#javascript")
-    w3.show("#guia-javascript")
-    w3.hide("#guia-html")
-    w3.hide("#guia-css")
     w3.hide("#html")
     w3.hide("#css")
 })
