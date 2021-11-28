@@ -16,7 +16,7 @@
 </head>
 <body class="w3-theme-l1">
     <div class="w3-bar w3-theme w3-animate-top">
-        <span class="w3-bar-item">HTMLPAD++ <i>v2.9</i></span>
+        <span class="w3-bar-item" id="nomeApp"></span>
 
         <div class="w3-right">
             <span class="w3-button w3-blue w3-hover-blue" id="btn-minimizar-janela">_</span>
@@ -26,7 +26,7 @@
     <div class="w3-theme-l1 w3-animate-top w3-bar" style="height: 100px;">
         <div class="w3-dropdown-hover">
             <span class="w3-button">Arquivo</span>
-            <div class="w3-dropdown-content w3-bar-block">
+            <div class="w3-dropdown-content w3-bar-block" style="position: fixed;">
                 <a href="#" class="w3-bar-item w3-button"><i class="fa fa-folder-open"></i> Abrir</a>
                 <a href="#" class="w3-bar-item w3-button"><i class="fa fa-save"></i> Salvar</a>
                 <hr>
@@ -40,7 +40,7 @@
         </div>
         <div class="w3-dropdown-hover">
             <span class="w3-button">Editar</span>
-            <div class="w3-dropdown-content w3-bar-block">
+            <div class="w3-dropdown-content w3-bar-block" style="position: fixed;">
                 <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cut"></i> Cortar</a>
                 <a href="#" class="w3-bar-item w3-button"><i class="fa fa-copy"></i> Copiar</a>
                 <a href="#" class="w3-bar-item w3-button"><i class="fa fa-paste"></i> Colar</a>
@@ -54,12 +54,20 @@
             </div>
         </div>
         <div class="w3-dropdown-hover">
-            <span class="w3-button">Ajuda</span>
-            <div class="w3-dropdown-content w3-bar-block">
-                <a href="#" class="w3-bar-item w3-button">Sobre</a>
-
+            <span class="w3-button">Janela</span>
+            <div class="w3-dropdown-content w3-bar-block" style="position: fixed;">
+                <a href="#" class="w3-bar-item w3-button">Guia</a>
+                <a href="#" class="w3-bar-item w3-button">Editor</a>
+                <a href="#" class="w3-bar-item w3-button">Preview</a>
+                <a href="#" class="w3-bar-item w3-button">Editar</a>
             </div>
         </div>
+        <div class="w3-dropdown-hover">
+            <span class="w3-button">Ajuda</span>
+            <div class="w3-dropdown-content w3-bar-block" style="position: fixed;">
+                <a href="#" class="w3-bar-item w3-button">Sobre</a>
+            </div>
+        </div>  
     </div>
     <div class="w3-card-4 w3-theme-l1 w3-animate-left" style="width: 300px; height: 452px; display: inline-block; position: absolute; overflow: scroll;">
         <div class="w3-bar w3-center w3-theme">
@@ -69,22 +77,7 @@
             <button class="accordion w3-button">Referencia</button>
             <div class="panel w3-animate-left">
                 <input class="w3-input w3-theme" type="text" placeholder="Pesquisar" oninput="w3.filterHTML('#guia-html-lista', 'li', this.value)">
-                <div class="guia-html-lista w3-ul" id="guia-html-lista">
-                    <li>&lt;!-- Comentário --> | Define comentários</li>
-                    <li>&lt;!DOCTYPE html> | Define o tipo de documento</li>
-                    <li>&lt;a> | Define um hiperlink</li>
-                    <li>&lt;abbr> | Define uma abreviatura ou acrônimo</li>
-                    <li>&lt;address> | Define as informações de contato do autor / proprietário de um documento</li>
-                    <li>&lt;tipo> | ff</li>
-                    <li>&lt;tipo> | ff</li>
-                    <li>&lt;tipo> | ff</li>
-                    <li>&lt;tipo> | ff</li>
-                    <li>&lt;tipo> | ff</li>
-                    <li>&lt;tipo> | ff</li>
-
-
-                    <li>&lt;tipo> | ff</li>
-                </div>
+                <div w3-include-html="guia-html.html" class="guia-html-lista w3-ul" id="guia-html-lista"></div>
             </div>
         </div>
 
@@ -128,105 +121,9 @@
         </div>
     </div>
 
-    <div class="w3-bar w3-animate-bottom w3-center w3-theme">
-        <p>HTMLPAD++ <i>v2.9</i> <i>powred by: <b>LUMATECH APPS E GAMES</b> &copy; 2021</i> - Todos os direitos reservados.</p>
-    </div>
+    <script src="lib/js/funcLoad.js"></script>
+    <script src="lib/js/funcJQuery.js"></script>
+    <script src="lib/js/funcNormal.js"></script>
 </body>
 </html>
-<script>
-window.onload = function() {
-	html = ace.edit("html")
-	html.setTheme("ace/theme/monokai")
-	html.session.setMode("ace/mode/html")
-    html.session.setValue("<p>Olá, mundo!</p>")
-
-    css = ace.edit("css")
-	css.setTheme("ace/theme/monokai")
-	css.session.setMode("ace/mode/css")
-    css.session.setValue(
-`body {
-    background: #fff;
-    color: #000;
-}`)
-
-    javascript = ace.edit("javascript")
-	javascript.setTheme("ace/theme/monokai")
-	javascript.session.setMode("ace/mode/javascript")
-    javascript.session.setValue("")
-}
-
-$("#btn-minimizar-janela").click(function () {
-    window.moveTo(0, 0)
-    window.resizeTo(screen.width, screen.height)
-})
-$("#btn-fechar-janela").click( function () {
-    confirmacao = confirm("Deseja fechar a janela atual?")
-    if (confirmacao == true) {
-        close()
-    } else {
-
-    }
-})
-
-
-$("#btn-html").click( function () {
-    w3.show("#html")
-    w3.show("#guia-html")
-    w3.hide("#guia-css")
-    w3.hide("#guia-javascript")
-    w3.hide("#css")
-    w3.hide("#javascript")
-})
-$("#btn-css").click( function () {
-    w3.show("#css")
-    w3.show("#guia-css")
-    w3.hide("#guia-html")
-    w3.hide("#guia-javascript")
-    w3.hide("#html")
-    w3.hide("#javascript")
-})
-$("#btn-javascript").click( function () {
-    w3.show("#javascript")
-    w3.show("#guia-javascript")
-    w3.hide("#guia-html")
-    w3.hide("#guia-css")
-    w3.hide("#html")
-    w3.hide("#css")
-})
-
-acc = document.getElementsByClassName("accordion")
-for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-        this.classList.toggle("ativado")
-        panel = this.nextElementSibling
-        if (panel.style.display === "block") {
-            panel.style.display = "none"
-        } else {
-            panel.style.display = "block"
-        }
-    })
-}
-
-$("#btn-preview").click(function() {
-    document.querySelectorAll(".ace_gutter")[0].hidden = true
-    document.querySelectorAll(".ace_gutter")[1].hidden = true
-    document.querySelectorAll(".ace_gutter")[2].hidden = true
-    $("#preview").attr("srcdoc", "<style>" + css.getValue("\n") + "</style>" + html.getValue("\n") + "<script>" + javascript.getValue("\n") + "<" + "/script>")
-    $("#modal-preview").show(1000)
-})
-$("#btn-fechar-preview").click( function() {
-    document.querySelectorAll(".ace_gutter")[0].hidden = false
-    document.querySelectorAll(".ace_gutter")[1].hidden = false
-    document.querySelectorAll(".ace_gutter")[2].hidden = false
-    $("#modal-preview").hide(1000)
-})
-$("#btn-salvar").click( function () {
-    var element = document.createElement('a');
-    code=document.getElementById('preview').srcdoc;
-    element.setAttribute('href', 'data:text/text;charset=utf-8,' +      encodeURI(code));
-    element.setAttribute('download', "index.html");
-    element.click();
-})
-
-</script>
 </body>
