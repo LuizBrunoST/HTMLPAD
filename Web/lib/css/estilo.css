@@ -21,6 +21,15 @@ body {
     display: none;
 }
 
+#guia-html, #guia-css #guia-javascript {background: transparent;}
+#guia-html {display: block;}
+#guia-css {display: none;}
+#guia-javascript {display: none;}
+    .accordion {transition: 0.4s; width: 100%;}
+    .ativado, .accordion:hover {background: #ccc !important; color: #000 !important;}
+        .panel {display: none; overflow: hidden;}
+
+
 .preview {
     width: 100%;
     height: 720px;
