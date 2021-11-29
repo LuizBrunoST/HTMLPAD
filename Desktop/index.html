@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title></title>
+    <title>HTMLPAD++</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,45 +34,175 @@
     <script src="lib/srcNoConflict/ext-language_tools.js"></script>
 </head>
 <body class="w3-theme-l1">
-    <div class="w3-bar w3-theme w3-animate-top">
-        <img class="w3-left" src="icones/android-icon-36x36.png">
-        <span class="w3-bar-item" id="nomeApp"></span>
+    <div class="w3-theme-l1" id="editor-default">
+        <div class="w3-bar w3-theme w3-animate-top">
+            <img class="w3-left" src="icones/android-icon-36x36.png">
+            <span class="w3-bar-item">HTMLPAD++</span>
 
-        <div class="w3-right">
-            <span class="w3-button w3-blue w3-hover-blue" id="btn-minimizar-janela">_</span>
-            <span class="w3-button w3-red w3-hover-red" id="btn-fechar-janela">&times;</span>
+            <div class="w3-right">
+                <span class="w3-button w3-blue w3-hover-blue" id="btn-minimizar-janela">_</span>
+                <span class="w3-button w3-red w3-hover-red" id="btn-fechar-janela">&times;</span>
+            </div>
+        </div>
+
+        <div class="w3-theme-l1 w3-animate-top w3-bar" style="height: 100px;">
+            <div class="w3-dropdown-hover">
+                <span class="w3-button">Arquivo</span>
+                <div class="w3-dropdown-content w3-bar-block" style="position: fixed;">
+                    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-folder-open"></i> Abrir</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-save"></i> Salvar</a>
+                    <hr>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-firefox"></i> Ver no Firefox</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-internet-explorer"></i> Ver no Explorer</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-opera"></i> Ver no Opera</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-google"></i> Ver no Google Chrome</a>
+                    <hr>
+                    <a href="#" class="w3-bar-item w3-button">Sair</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <span class="w3-button">Editar</span>
+                <div class="w3-dropdown-content w3-bar-block" style="position: fixed;">
+                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-cut"></i> Cortar</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-copy"></i> Copiar</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-paste"></i> Colar</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-cut"></i> Recortar</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-undo"></i> Desfazer</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-redo"></i> Refazer</a>
+                    <hr>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-search"></i> Procurar</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="far fa-object-group"></i> Selecionar</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-trash-alt"></i> Limpar</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <span class="w3-button">Janela</span>
+                <div class="w3-dropdown-content w3-bar-block" style="position: fixed;">
+                    <span href="#" class="w3-bar-item w3-button" id="btn-menu-app-android"><i class="fab fa-android"></i> Aplicativo android</span>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-columns"></i> Site</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-compress"></i> Editor fullscreen</a>
+                    <a href="#" class="w3-bar-item w3-button">Editor default</a>
+                    <a href="#" class="w3-bar-item w3-button">Preferências</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <span class="w3-button">Ajuda</span>
+                <div class="w3-dropdown-content w3-bar-block" style="position: fixed;">
+                    <a href="#" class="w3-bar-item w3-button">Sobre</a>
+                </div>
+            </div> 
+        </div>
+    
+        <div class="w3-card-4 w3-theme-l1 w3-animate-right" style="width: 100%; position: relative;">
+            <div class="w3-bar w3-theme">
+                <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme" id="btn-html"><i class="fab fa-html5"></i> html</span>
+                <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme" id="btn-css"><i class="fab fa-css3-alt"></i> css</span>
+                <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme" id="btn-javascript"><i class="fab fa-js"></i> javascript</span>
+    
+                <span class="w3-bar-item w3-right w3-xlarge w3-button w3-theme-action" id="btn-preview"><i class="fas fa-bug"></i> Preview</span>
+            </div>
+            <div id="html"></div>
+            <div id="css"></div>
+            <div id="javascript"></div>
+        </div>
+    
+        <div class="w3-modal" id="modal-preview">
+            <div class="w3-modal-content">
+                <div class="w3-bar w3-theme w3-center">
+                    <span class="w3-xlarge">Resultado</span>
+    
+                    <span class="w3-btn w3-red w3-right" id="btn-fechar-preview">&times;</span>
+                    <span class="w3-btn w3-blue w3-right" id="btn-salvar"><i class="fa fa-save"></i></span>
+                </div>
+                <iframe id="preview" class="preview"></iframe>
+            </div>
         </div>
     </div>
-    <div w3-include-html="menu.html" class="w3-theme-l1 w3-animate-top w3-bar" style="height: 100px;"></div>
+    
+    <div class="w3-theme-l1" id="editor-app-android">
+        <div class="w3-bar w3-theme w3-animate-top">
+            <img class="w3-left" src="icones/android-icon-36x36.png">
+            <span class="w3-bar-item">HTMLPAD++</span>
 
-    <div class="w3-card-4 w3-theme-l1 w3-animate-right" style="width: 100%; position: relative;">
-        <div class="w3-bar w3-theme">
-            <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme" id="btn-html"><i class="fab fa-html5"></i> html</span>
-            <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme" id="btn-css"><i class="fab fa-css3-alt"></i> css</span>
-            <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme" id="btn-javascript"><i class="fab fa-js"></i> javascript</span>
-
-            <span class="w3-bar-item w3-right w3-xlarge w3-button w3-theme-action" id="btn-preview"><i class="fas fa-bug"></i> Preview</span>
+            <div class="w3-right">
+                <span class="w3-button w3-blue w3-hover-blue" id="btn-minimizar-janela">_</span>
+                <span class="w3-button w3-red w3-hover-red" id="btn-fechar-janela">&times;</span>
+            </div>
         </div>
-        <div id="html"></div>
-        <div id="css"></div>
-        <div id="javascript"></div>
-    </div>
-
-    <div class="w3-modal" id="modal-preview">
-        <div class="w3-modal-content">
+        <div class="w3-theme-l1 w3-animate-top w3-bar" style="height: 100px;">
+            <div class="w3-dropdown-hover">
+                <span class="w3-button">Arquivo</span>
+                <div class="w3-dropdown-content w3-bar-block" style="position: fixed;">
+                    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-folder-open"></i> Abrir</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-save"></i> Salvar</a>
+                    <hr>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-firefox"></i> Ver no Firefox</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-internet-explorer"></i> Ver no Explorer</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-opera"></i> Ver no Opera</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-google"></i> Ver no Google Chrome</a>
+                    <hr>
+                    <a href="#" class="w3-bar-item w3-button">Sair</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <span class="w3-button">Editar</span>
+                <div class="w3-dropdown-content w3-bar-block" style="position: fixed;">
+                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-cut"></i> Cortar</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-copy"></i> Copiar</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-paste"></i> Colar</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-cut"></i> Recortar</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-undo"></i> Desfazer</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-redo"></i> Refazer</a>
+                    <hr>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-search"></i> Procurar</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="far fa-object-group"></i> Selecionar</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-trash-alt"></i> Limpar</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <span class="w3-button">Janela</span>
+                <div class="w3-dropdown-content w3-bar-block" style="position: fixed;">
+                    <span href="#" class="w3-bar-item w3-button" id="btn-menu-app-android"><i class="fab fa-android"></i> Aplicativo android</span>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-columns"></i> Site</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-compress"></i> Editor fullscreen</a>
+                    <a href="#" class="w3-bar-item w3-button">Editor default</a>
+                    <a href="#" class="w3-bar-item w3-button">Preferências</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <span class="w3-button">Ajuda</span>
+                <div class="w3-dropdown-content w3-bar-block" style="position: fixed;">
+                    <a href="#" class="w3-bar-item w3-button">Sobre</a>
+                </div>
+            </div> 
+        </div>
+    
+        <div class="w3-card-4 w3-theme-l1 w3-animate-right" style="width: 950px; display: inline-block; position: relative;">
+            <div class="w3-bar w3-theme">
+                <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme" id="btn-html"><i class="fab fa-html5"></i> html</span>
+                <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme" id="btn-css"><i class="fab fa-css3-alt"></i> css</span>
+                <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme" id="btn-javascript"><i class="fab fa-js"></i> javascript</span>
+    
+                <span class="w3-bar-item w3-right w3-xlarge w3-button w3-theme-action" id="btn-preview"><i class="fas fa-bug"></i> Preview</span>
+            </div>
+            <div id="html"></div>
+            <div id="css"></div>
+            <div id="javascript"></div>
+        </div>
+    
+        <div class="w3-card-4" style="width: 360px; height: 450px; display: inline-block;">
             <div class="w3-bar w3-theme w3-center">
                 <span class="w3-xlarge">Resultado</span>
-
+    
                 <span class="w3-btn w3-red w3-right" id="btn-fechar-preview">&times;</span>
                 <span class="w3-btn w3-blue w3-right" id="btn-salvar"><i class="fa fa-save"></i></span>
             </div>
             <iframe id="preview" class="preview"></iframe>
         </div>
+    
     </div>
-
-    <script src="lib/js/funcLoad.js"></script>
-    <script src="lib/js/funcJQuery.js"></script>
-    <script src="lib/js/funcNormal.js"></script>
 </body>
+<script src="lib/js/funcLoad.js"></script>
+<script src="lib/js/funcJQuery.js"></script>
+<script src="lib/js/funcNormal.js"></script>
 </html>
-</body>

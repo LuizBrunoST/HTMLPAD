@@ -1,5 +1,8 @@
-body {
+#editor-default, #editor-app-android {
     font-family: 'Trebuchet MS' !important;
+}
+#editor-app-android {
+    display: none;
 }
 #html {
     position: relative;

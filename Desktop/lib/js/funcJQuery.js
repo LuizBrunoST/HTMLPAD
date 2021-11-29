@@ -11,6 +11,10 @@ $("#btn-fechar-janela").click( function () {
     }
 })
 
+$("#btn-menu-app-android").click(function () {
+    $("#editor-default").hide()
+    $("#editor-app-android").show()
+})
 
 $("#btn-html").click( function () {
     w3.show("#html")
