@@ -11,10 +11,6 @@ $("#btn-fechar-janela").click( function () {
     }
 })
 
-$("#btn-menu-app-android").click(function () {
-    $("#editor-default").hide()
-    $("#editor-app-android").show()
-})
 
 $("#btn-html").click( function () {
     w3.show("#html")
@@ -33,16 +29,10 @@ $("#btn-javascript").click( function () {
 })
 
 $("#btn-preview").click(function() {
-    document.querySelectorAll(".ace_gutter")[0].hidden = true
-    document.querySelectorAll(".ace_gutter")[1].hidden = true
-    document.querySelectorAll(".ace_gutter")[2].hidden = true
     $("#preview").attr("srcdoc", "<style>" + css.getValue("\n") + "</style>" + html.getValue("\n") + "<script>" + javascript.getValue("\n") + "<" + "/script>")
     $("#modal-preview").show(1000)
 })
 $("#btn-fechar-preview").click( function() {
-    document.querySelectorAll(".ace_gutter")[0].hidden = false
-    document.querySelectorAll(".ace_gutter")[1].hidden = false
-    document.querySelectorAll(".ace_gutter")[2].hidden = false
     $("#modal-preview").hide(1000)
 })
 $("#btn-salvar").click( function () {
