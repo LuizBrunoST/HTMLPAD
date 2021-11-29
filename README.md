@@ -3,7 +3,7 @@
 
 
 - [x] Aplicativo Android.
-- [ ] Desktop Windows.
+Cancelado a versão para desktop
 - [x] Versão WebAplication.
 
 # Tecnologias
