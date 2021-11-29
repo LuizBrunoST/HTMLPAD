@@ -2,7 +2,7 @@
 [APP] - HTMLPAD++ : Editor em HTML<br>
 
 
-- [x] Aplicativo Android.
+- [x] Aplicativo Android.<br>
 Cancelado a versão para desktop
 - [x] Versão WebAplication.
 
