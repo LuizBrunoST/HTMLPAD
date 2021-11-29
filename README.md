@@ -3,8 +3,7 @@
 
 
 - [x] Aplicativo Android.
-- [ ] Desktop Windows.
-- [x] Versão WebAplication.
+- [x] Desktop Windows.
 
 # Tecnologias
 * Javascript (jQuery,w3.js)
