@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>HTMLPAD++</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="57x57" href="desktop/icones/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="desktop/icones/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="desktop/icones/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="desktop/icones/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="desktop/icones/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="desktop/icones/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="desktop/icones/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="desktop/icones/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="desktop/icones/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="desktop/icones/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="desktop/icones/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="desktop/icones/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="desktop/icones/favicon-16x16.png">
+    <link rel="manifest" href="desktop/icones/manifest.json">
+    <meta name="msapplication-TileColor" content="#333">
+    <meta name="msapplication-TileImage" content="desktop/icones/ms-icon-144x144.png">
+    <meta name="theme-color" content="#333">
+
+    <link rel="stylesheet" href="desktop/lib/css/w3.css">
+    <link rel="stylesheet" href="desktop/lib/css/thema_Dark.css">
+    <link rel="stylesheet" href="desktop/lib/fontAwesome/css/all.min.css">
+    <link rel="stylesheet" href="desktop/lib/fontAwesome/css/brands.css">
+    <script src="desktop/lib/js/jquery-3.6.0.min.js"></script>
+    <script src="versao.js"></script>
+</head>
+<body class="w3-theme-dark">
+    <div class="w3-display-middle w3-card-4 w3-round w3-padding w3-theme-d1">
+        <h2>HTMLPAD++ <span id="version"></span></h2>
+        <p>Editor html, em html 5</p>
+
+        <button id="desktop" class="w3-third-2 w3-button w3-blue w3-round w3-theme-d1 w3-hover-theme w3-theme-action"><i class="fas fa-desktop"></i> Desktop</button>
+        <button id="aplicativo" class="w3-third-3 w3-button w3-blue w3-round w3-theme-d1 w3-hover-theme w3-theme-action"><i class="fab fa-android"></i> Android</button>
+    </div>
+
+<script>
+//Js
+$("#desktop").click(function(){
+    window.location.href="Desktop/index.html"
+})
+
+$("#aplicativo").click(function(){
+    window.alert("Ainda nao esta pronto.\nMas ja pode usar")
+    window.location.href="Aplicativo/index.html"
+})
+</script>
+</body>
+</html>
