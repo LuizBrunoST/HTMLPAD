@@ -29,7 +29,7 @@ window.onload = function() {
     javascript = ace.edit("javascript")
 	javascript.setTheme("ace/theme/monokai")
 	javascript.session.setMode("ace/mode/javascript")
-    javascript.session.setValue("")
+    javascript.session.setValue("//javascript")
     javascript.setOptions({
         enableBasicAutocompletion: true,
         enableSnippets: true,

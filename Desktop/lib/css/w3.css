@@ -1,4 +1,8 @@
-﻿/* W3.CSS 4.15 December 2020 by Jan Egil and Borge Refsnes */
+﻿/* W3.CSS 4.14 December 2020 by Jan Egil and Borge Refsnes */
+/* 
+    W3.CSS 4.15 Agosto 2022 por Luiz Bruno R Teixeira 
+    == Todos os diretos a Jan Egil e Borge Refsnes ==
+*/
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
 /* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
 html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
@@ -29,6 +33,9 @@ h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-
 .w3-serif{font-family:serif}.w3-sans-serif{font-family:sans-serif}.w3-cursive{font-family:cursive}.w3-monospace{font-family:monospace}
 h1,h2,h3,h4,h5,h6{font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0}.w3-wide{letter-spacing:4px}
 hr{border:0;border-top:1px solid #eee;margin:20px 0}
+.w3-spinner-grow{display: inline-block;width: 2rem;height: 2rem;vertical-align: -0.125em;background-color: currentColor;border-radius: 50%;opacity: 0;-webkit-animation: .75s linear infinite spinner-grow;animation: .75s linear infinite spinner-grow;}@keyframes spinner-grow{0%{transform: scale(0);}50%{opacity: 1;transform: none;}}
+.w3-placeholder{display: inline-block;min-height: 1em;vertical-align: middle;cursor: wait;background-color: currentColor;opacity: .5}
+.w3-placeholder.btn::before{display: inline-block;content: ""}.w3-placeholder-xs{min-height: .6em}.w3-placeholder-sm{min-height: .8em}.w3-placeholder-lg{min-height: 1.2em}.w3-placeholder-glow .w3-placeholder{-webkit-animation: placeholder-glow 2s ease-in-out infinite;animation: placeholder-glow 2s ease-in-out infinite}@-webkit-keyframes placeholder-glow{50%{opacity: .2}}@keyframes placeholder-glow{50%{opacity: .2}}
 .w3-image{max-width:100%;height:auto}img{vertical-align:middle}a{color:inherit}
 .w3-table,.w3-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.w3-table-all{border:1px solid #ccc}
 .w3-bordered tr,.w3-table-all tr{border-bottom:1px solid #ddd}.w3-striped tbody tr:nth-child(even){background-color:#f1f1f1}

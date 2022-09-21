@@ -24,7 +24,7 @@
     <meta name="theme-color" content="#333">
 
     <link rel="stylesheet" href="Desktop/lib/css/w3.css">
-    <link rel="stylesheet" href="Desktop/lib/css/thema_Dark.css">
+    <link rel="stylesheet" href="Desktop/lib/css/thema.css">
     <link rel="stylesheet" href="Desktop/lib/fontAwesome/css/all.min.css">
     <link rel="stylesheet" href="Desktop/lib/fontAwesome/css/brands.css">
     <script src="Desktop/lib/js/jquery-3.6.0.min.js"></script>
@@ -40,6 +40,28 @@
     </script>
 </head>
 <body class="w3-theme-dark">
+    <div class="w3-modal" id="modal1" style="display: block;">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <div class="w3-bar w3-dark-gray w3-card-4">
+                <a href="https://github.com/LuizBrunoST/HTMLPAD" target="_blank" class="w3-bar-item w3-button"><i class="fa-brands fa-github"></i></a>
+                <span onclick="document.getElementById('modal1').style.display='none'" class="w3-button w3-red w3-display-topright">&times;</span>
+            </div>
+
+            <div class="w3-container w3-theme-d2">
+                <h2>HTMLPAD++</h2>
+                <p>
+                    Um editor em javascript, em breve mais atualizações.<br>
+                    Recomendo que use a versão para o seu dispositivo <b>(Desktop - Android)</b>. <i>Questão mesmo em parte viusual</i><br>
+                </p>
+            </div>
+            <div class="w3-container w3-light-grey w3-padding">
+                <button class="w3-button w3-right w3-white w3-border w3-round" onclick="document.getElementById('modal1').style.display='none'">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+
+
     <div class="w3-display-middle w3-card-4 w3-round w3-padding w3-theme-d1">
         <h2>HTMLPAD++ <span id="version"></span></h2>
         <p>Editor html, em html 5</p>

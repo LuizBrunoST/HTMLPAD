@@ -24,7 +24,7 @@
     <meta name="theme-color" content="#333">
 
     <link rel="stylesheet" href="lib/css/estilo.css">
-    <link rel="stylesheet" href="lib/css/thema_Dark.css">
+    <link rel="stylesheet" href="lib/css/thema.css">
     <link rel="stylesheet" href="lib/css/w3.css">
     <link rel="stylesheet" href="lib/fontAwesome/css/all.min.css">
     <link rel="stylesheet" href="lib/fontAwesome/css/brands.css">
@@ -44,16 +44,15 @@
 </head>
 <body class="w3-theme-l1">
     <div class="w3-display-middle" id="loading">
-        Carregando...
+        <div class="w3-spinner-grow w3-theme"></div><div class="w3-spinner-grow w3-theme-d3"></div><div class="w3-spinner-grow w3-blue"></div>
     </div>
 
     <div class="w3-theme-l1" id="editor-default" style="display: none;">
         <div class="w3-bar w3-theme w3-animate-top">
             <img class="w3-left" src="icones/android-icon-36x36.png">
-            <span class="w3-bar-item">HTMLPAD++</span>
+            <span class="w3-bar-item" style="text-shadow: 0px 1px 1px #000;">HTMLPAD++</span>
 
             <div class="w3-right">
-                <span class="w3-button w3-blue w3-hover-blue" id="btn-minimizar-janela">_</span>
                 <span class="w3-button w3-red w3-hover-red" id="btn-fechar-janela">&times;</span>
             </div>
         </div>
@@ -91,7 +90,7 @@
             <div class="w3-dropdown-hover">
                 <span class="w3-button">Janela</span>
                 <div class="w3-dropdown-content w3-bar-block" style="position: fixed;">
-                    <a href="app-android.html" class="w3-bar-item w3-button"><i class="fab fa-android"></i> Aplicativo android</a>
+                    <a href="#" class="w3-bar-item w3-button"><i class="fab fa-android"></i> Aplicativo android</a>
                     <a href="#" class="w3-bar-item w3-button"><i class="fas fa-columns"></i> Site</a>
                     <a href="#" class="w3-bar-item w3-button"><i class="fas fa-compress"></i> Editor fullscreen</a>
                     <a href="index.html" class="w3-bar-item w3-button">Editor default</a>
@@ -108,11 +107,11 @@
     
         <div class="w3-card-4 w3-theme-l1 w3-animate-right" style="width: 100%; position: relative;">
             <div class="w3-bar w3-theme">
-                <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme" id="btn-html"><i class="fab fa-html5"></i> html</span>
-                <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme" id="btn-css"><i class="fab fa-css3-alt"></i> css</span>
-                <span class="w3-bar-item w3-xlarge w3-button w3-hover-theme" id="btn-javascript"><i class="fab fa-js"></i> javascript</span>
+                <span class="w3-bar-item w3-theme-action w3-button w3-hover-theme" id="btn-html"><i class="fab fa-html5"></i> html</span>
+                <span class="w3-bar-item w3-button w3-hover-theme" id="btn-css"><i class="fab fa-css3-alt"></i> css</span>
+                <span class="w3-bar-item w3-button w3-hover-theme" id="btn-javascript"><i class="fab fa-js"></i> javascript</span>
     
-                <span class="w3-bar-item w3-right w3-xlarge w3-button w3-theme-action" id="btn-preview"><i class="fas fa-bug"></i> Preview</span>
+                <span class="w3-bar-item w3-right w3-button w3-theme-action" id="btn-preview"><i class="fas fa-bug"></i> Preview</span>
             </div>
             <div id="html"></div>
             <div id="css"></div>
@@ -122,10 +121,10 @@
         <div class="w3-modal" id="modal-preview">
             <div class="w3-modal-content">
                 <div class="w3-bar w3-theme w3-center">
-                    <span class="w3-xlarge">Resultado</span>
+                    <span class="w3-bar-item">Resultado</span>
     
-                    <span class="w3-btn w3-red w3-right" id="btn-fechar-preview">&times;</span>
-                    <span class="w3-btn w3-blue w3-right" id="btn-salvar"><i class="fa fa-save"></i></span>
+                    <span class="w3-btn w3-bar-item w3-red w3-right" id="btn-fechar-preview">&times;</span>
+                    <span class="w3-btn w3-bar-item w3-blue w3-right" id="btn-salvar"><i class="fa fa-save"></i></span>
                 </div>
                 <iframe id="preview" class="preview"></iframe>
             </div>
