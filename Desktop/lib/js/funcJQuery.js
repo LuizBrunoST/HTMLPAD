@@ -47,7 +47,7 @@ $("#btn-fechar-preview").click( function() {
 $("#btn-salvar").click( function () {
     var element = document.createElement('a');
     code = document.getElementById('preview').srcdoc;
-    element.setAttribute('href', 'data:text/text;charset=utf-8,' +      encodeURI(code));
-    element.setAttribute('download', "index.html");
+    element.setAttribute('href', 'data:text/text;charset=utf-8,' + encodeURIComponent(code));
+    element.setAttribute('download', "snippets.html");
     element.click();
 })
