@@ -23,6 +23,13 @@
     <meta name="msapplication-TileImage" content="Desktop/icones/ms-icon-144x144.png">
     <meta name="theme-color" content="#333">
 
+    <meta name="author" content="LUMAMAX | Luiz Bruno">
+    <meta name="description" content="Explore nosso editor de código online para HTML, CSS e JavaScript. Três abas separadas para edição, visualização em tempo real e destaque de sintaxe. Crie páginas web incríveis de maneira eficiente.">
+    <meta name="keywords" content="editor online, editor html, editor javascript, editor css">
+    <meta property="og:image" content="https://luizbrunost.github.io/HTMLPAD/Desktop/icones/apple-icon-180x180.png">
+    <meta property="og:url" content="https://luizbrunost.github.io/HTMLPAD">
+    <meta property="og:type" content="website">
+
     <link rel="stylesheet" href="Desktop/lib/css/w3.css">
     <link rel="stylesheet" href="Desktop/lib/css/thema.css">
     <link rel="stylesheet" href="Desktop/lib/fontAwesome/css/all.min.css">
@@ -30,15 +37,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <script src="Desktop/lib/js/jquery-3.6.0.min.js"></script>
     <script src="versao.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HPNKXEEBY8"></script>
-    <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-HPNKXEEBY8');
-    </script>
 </head>
 <body class="w3-theme-dark">
     <div class="w3-modal" id="modal1" style="display: block;">
@@ -64,11 +62,20 @@
 
 
     <div class="w3-display-middle w3-card-4 w3-round w3-padding w3-theme-d1">
-        <h2>HTMLPAD++ <span id="version"></span></h2>
-        <p>Editor html, em html 5</p>
-
-        <button id="desktop" class="w3-third-2 w3-button w3-blue w3-round w3-theme-d1 w3-hover-theme w3-theme-action"><i class="fas fa-desktop"></i> Desktop</button>
-        <button id="aplicativo" class="w3-third-3 w3-button w3-blue w3-round w3-theme-d1 w3-hover-theme w3-theme-action"><i class="fab fa-android"></i> Android</button>
+        <div class="w3-center">
+            <h2>HTMLPAD++ <span id="version"></span></h2>
+            <p>
+                Explore nosso editor de código online para HTML, CSS e JavaScript. Três abas separadas para edição, visualização em tempo real e destaque de sintaxe. Crie páginas web incríveis de maneira eficiente.
+            </p>
+        </div>
+        <div class="w3-row">
+            <div class="w3-col s6">
+                <button id="desktop" class="w3-block w3-button w3-blue w3-theme-d1 w3-hover-theme w3-theme-action"><i class="fas fa-desktop"></i> Desktop</button>
+            </div>
+            <div class="w3-col s6">
+                <button id="aplicativo" class="w3-block w3-button w3-blue w3-theme-d1 w3-hover-theme w3-theme-action"><i class="fab fa-android"></i> Android</button>
+            </div>
+        </div>
     </div>
 
 <script>

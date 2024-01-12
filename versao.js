@@ -1,3 +1,3 @@
 window.onload = function (){
-    $("#version").html("<i>2.8.1</i>")
+    $("#version").html("<i>2.8.2</i>")
 }

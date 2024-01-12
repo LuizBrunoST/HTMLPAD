@@ -32,15 +32,14 @@
     <script src="lib/js/w3.js"></script>
     <script src="lib/srcNoConflict/ace.js"></script>
     <script src="lib/srcNoConflict/ext-language_tools.js"></script>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HPNKXEEBY8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-HPNKXEEBY8');
-</script>
+    <script>
+    (function (d, w){
+        var s = d.createElement("script")
+        s.type = "text/javascript"
+        s.src = "https://www.lumamax.com.br/api/sdkAds/adsmax.js"
+        d.getElementsByTagName('head')[0].appendChild(s)
+    })(document, window)
+    </script>
 </head>
 <body class="w3-theme-l1">
     <div class="w3-display-middle" id="loading">
@@ -104,7 +103,9 @@
                 </div>
             </div> 
         </div>
-    
+
+        <div class="adMax1 w3-margin-top w3-margin-buttom" id="adMax1"></div>
+
         <div class="w3-card-4 w3-theme-l1 w3-animate-right" style="width: 100%; position: relative;">
             <div class="w3-bar w3-theme">
                 <span class="w3-bar-item w3-theme-action w3-button w3-hover-theme" id="btn-html"><i class="fab fa-html5"></i> html</span>
@@ -118,7 +119,7 @@
             <div id="javascript"></div>
         </div>
     
-        <div class="w3-modal" id="modal-preview">
+        <div class="w3-modal" id="modal-preview" style="z-index:9999;">
             <div class="">
                 <div class="w3-bar w3-theme w3-center">
                     <span class="w3-bar-item">Resultado</span>
@@ -129,6 +130,7 @@
                 <iframe id="preview" class="preview"></iframe>
             </div>
         </div>
+        <div class="adMax2 w3-margin-top w3-margin-buttom" id="adMax2"></div>
     </div>
 </body>
 <script src="lib/js/funcLoad.js"></script>
