@@ -12,34 +12,41 @@ $("#btn-fechar-janela").click( function () {
 })
 
 
-$("#btn-html").click( function () {
-    w3.show("#html")
-    w3.hide("#css")
-    w3.hide("#javascript")
+$("#btn-html-mobile").click( function () {
+    w3.show("#html-mobile")
+    w3.hide("#css-mobile")
+    w3.hide("#javascript-mobile")
     $(this).addClass("w3-theme-action")
-    $("#btn-css").removeClass("w3-theme-action")
-    $("#btn-javascript").removeClass("w3-theme-action")
+    $("#btn-css-mobile").removeClass("w3-theme-action")
+    $("#btn-javascript-mobile").removeClass("w3-theme-action")
 })
-$("#btn-css").click( function () {
-    w3.show("#css")
-    w3.hide("#html")
-    w3.hide("#javascript")
+$("#btn-css-mobile").click( function () {
+    w3.show("#css-mobile")
+    w3.hide("#html-mobile")
+    w3.hide("#javascript-mobile")
     $(this).addClass("w3-theme-action")
-    $("#btn-html").removeClass("w3-theme-action")
-    $("#btn-javascript").removeClass("w3-theme-action")
+    $("#btn-html-mobile").removeClass("w3-theme-action")
+    $("#btn-javascript-mobile").removeClass("w3-theme-action")
 })
-$("#btn-javascript").click( function () {
-    w3.show("#javascript")
-    w3.hide("#html")
-    w3.hide("#css")
+$("#btn-javascript-mobile").click( function () {
+    w3.show("#javascript-mobile")
+    w3.hide("#html-mobile")
+    w3.hide("#css-mobile")
     $(this).addClass("w3-theme-action")
-    $("#btn-html").removeClass("w3-theme-action")
-    $("#btn-css").removeClass("w3-theme-action")
+    $("#btn-html-mobile").removeClass("w3-theme-action")
+    $("#btn-css-mobile").removeClass("w3-theme-action")
+})
+
+$("#btn-preview-mobile").click(function() {
+    $("#javascript-mobile").hide()
+    $("#html-mobile").hide()
+    $("#css-mobile").hide()
+    $('#preview-mobile').show()
+    $("#preview-mobile").attr("srcdoc", "<style>" + css.getValue("\n") + "</style>" + html.getValue("\n") + "<script>" + javascript.getValue("\n") + "<" + "/script>")
 })
 
 $("#btn-preview").click(function() {
-    $("#preview").attr("srcdoc", "<style>" + css.getValue("\n") + "</style>" + html.getValue("\n") + "<script>" + javascript.getValue("\n") + "<" + "/script>")
-    $("#modal-preview").slideDown()
+    $("#preview").attr("srcdoc", "<style>" + css.getValue("\n") + "</style>" + html.getValue("\n") + "<script>" + javascript.getValue("\n") + "<" + "/script>");
 })
 $("#btn-fechar-preview").click( function() {
     $("#modal-preview").slideUp()
