@@ -1,7 +1,3 @@
-$("#btn-minimizar-janela").click(function () {
-    window.moveTo(0, 0)
-    window.resizeTo(screen.width, screen.height)
-})
 $("#btn-fechar-janela").click( function () {
     confirmacao = confirm("Deseja fechar a janela atual?")
     if (confirmacao == true) {
@@ -42,14 +38,11 @@ $("#btn-preview-mobile").click(function() {
     $("#html-mobile").hide()
     $("#css-mobile").hide()
     $('#preview-mobile').show()
-    $("#preview-mobile").attr("srcdoc", "<style>" + css.getValue("\n") + "</style>" + html.getValue("\n") + "<script>" + javascript.getValue("\n") + "<" + "/script>")
+    $("#preview-mobile").attr("srcdoc", "<style>" + cssMobile.getValue("\n") + "</style>" + htmlMobile.getValue("\n") + "<script>" + javascriptMobile.getValue("\n") + "<" + "/script>")
 })
 
 $("#btn-preview").click(function() {
     $("#preview").attr("srcdoc", "<style>" + css.getValue("\n") + "</style>" + html.getValue("\n") + "<script>" + javascript.getValue("\n") + "<" + "/script>");
-})
-$("#btn-fechar-preview").click( function() {
-    $("#modal-preview").slideUp()
 })
 $("#btn-salvar").click( function () {
     var element = document.createElement('a');
@@ -58,7 +51,16 @@ $("#btn-salvar").click( function () {
     element.setAttribute('download', "snippets.html");
     element.click();
 })
+$("#btn-salvar-mobile").click( function () {
+    var element = document.createElement('a');
+    code = document.getElementById('preview-mobile').srcdoc;
+    element.setAttribute('href', 'data:text/text;charset=utf-8,' + encodeURIComponent(code));
+    element.setAttribute('download', "snippets.html");
+    element.click();
+})
 
+
+//LUMAADS
 $(document).ready(function() {
     // Função para realizar a requisição AJAX e atualizar a div com o conteúdo da resposta
     function ajax(url, divClass) {
