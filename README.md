@@ -1,5 +1,6 @@
-# HTMLPAD ++
-[APP] - HTMLPAD++ : Editor em HTML<br>
+# HTMLPAD++
+
+**[APP] - HTMLPAD++:** Um editor em HTML com suporte multiplataforma.
 
 - [x] Aplicativo Android.
 - [x] Desktop Windows.
@@ -7,9 +8,9 @@
 * Javascript (jQuery, w3.js, ace.js).
 * CSS (w3.css, fontawesome.css).
 # Anotações
-- [x] Janela do sobre.
+- [ ] Janela do sobre.
 - [ ] savar o código em json e configurar para o nome do arquivo.
-- [x] fazer o layout do modo aplicativo (mobile).
+- [ ] fazer o layout do modo aplicativo (mobile).
 # Log
 
 **04/12/2021**<br>
