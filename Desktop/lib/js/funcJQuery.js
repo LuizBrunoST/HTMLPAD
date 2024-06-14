@@ -1,47 +1,41 @@
-$("#btn-fechar-janela").click( function () {
-    confirmacao = confirm("Deseja fechar a janela atual?")
-    if (confirmacao == true) {
-        close()
-    } else {
+html = ace.edit("html")
+css = ace.edit("css")
+javascript = ace.edit("javascript")
 
-    }
-})
-
-
-$("#btn-html-mobile").click( function () {
-    w3.show("#html-mobile")
-    w3.hide("#css-mobile")
-    w3.hide("#javascript-mobile")
+$("#btn-html").click( function () {
+    $('#preview').hide()
+    w3.show("#html")
+    w3.hide("#css")
+    w3.hide("#javascript")
     $(this).addClass("w3-theme-action")
-    $("#btn-css-mobile").removeClass("w3-theme-action")
-    $("#btn-javascript-mobile").removeClass("w3-theme-action")
+    $("#btn-css").removeClass("w3-theme-action")
+    $("#btn-javascript").removeClass("w3-theme-action")
 })
-$("#btn-css-mobile").click( function () {
-    w3.show("#css-mobile")
-    w3.hide("#html-mobile")
-    w3.hide("#javascript-mobile")
+$("#btn-css").click( function () {
+    $('#preview').hide()
+    w3.show("#css")
+    w3.hide("#html")
+    w3.hide("#javascript")
     $(this).addClass("w3-theme-action")
-    $("#btn-html-mobile").removeClass("w3-theme-action")
-    $("#btn-javascript-mobile").removeClass("w3-theme-action")
+    $("#btn-html").removeClass("w3-theme-action")
+    $("#btn-javascript").removeClass("w3-theme-action")
 })
-$("#btn-javascript-mobile").click( function () {
-    w3.show("#javascript-mobile")
-    w3.hide("#html-mobile")
-    w3.hide("#css-mobile")
+$("#btn-javascript").click( function () {
+    w3.show("#javascript")
+    $('#preview').hide()
+    w3.hide("#html")
+    w3.hide("#css")
     $(this).addClass("w3-theme-action")
-    $("#btn-html-mobile").removeClass("w3-theme-action")
-    $("#btn-css-mobile").removeClass("w3-theme-action")
+    $("#btn-html").removeClass("w3-theme-action")
+    $("#btn-css").removeClass("w3-theme-action")
 })
 
-$("#btn-preview-mobile").click(function() {
-    $("#javascript-mobile").hide()
-    $("#html-mobile").hide()
-    $("#css-mobile").hide()
-    $('#preview-mobile').show()
-    $("#preview-mobile").attr("srcdoc", "<style>" + cssMobile.getValue("\n") + "</style>" + htmlMobile.getValue("\n") + "<script>" + javascriptMobile.getValue("\n") + "<" + "/script>")
-})
 
 $("#btn-preview").click(function() {
+    $('#html').hide()
+    $('#css').hide()
+    $('#javascript').hide()
+    $('#preview').show()
     $("#preview").attr("srcdoc", "<style>" + css.getValue("\n") + "</style>" + html.getValue("\n") + "<script>" + javascript.getValue("\n") + "<" + "/script>");
 })
 $("#btn-salvar").click( function () {
@@ -51,14 +45,96 @@ $("#btn-salvar").click( function () {
     element.setAttribute('download', "snippets.html");
     element.click();
 })
-$("#btn-salvar-mobile").click( function () {
-    var element = document.createElement('a');
-    code = document.getElementById('preview-mobile').srcdoc;
-    element.setAttribute('href', 'data:text/text;charset=utf-8,' + encodeURIComponent(code));
-    element.setAttribute('download', "snippets.html");
-    element.click();
-})
 
+
+// Função para salvar o projeto
+function saveProject() {
+    var projectName = prompt("Digite o nome do projeto:");
+    if (projectName) {
+        var projectData = {
+            html: html.getValue("\n"),
+            css: css.getValue("\n"),
+            js: javascript.getValue("\n")
+        };
+        var projects = JSON.parse(localStorage.getItem("htmlpad") || "[]");
+        projects.push({ projeto: projectName, content: projectData });
+        localStorage.setItem("htmlpad", JSON.stringify(projects));
+        loadProjects();
+    }
+}
+
+// Função para carregar os projetos salvos
+function loadProjects() {
+    var savedProjects = document.getElementById("savedProjects");
+    savedProjects.innerHTML = "";
+    var projects = JSON.parse(localStorage.getItem("htmlpad") || "[]");
+    projects.forEach(function(project) {
+        var option = document.createElement("a");
+        option.classList.add('w3-bar-item', 'w3-button', 'w3-padding');
+        option.id = "project_" + project.projeto;
+        option.href = "#project_" + project.projeto;
+        option.onclick = function () {loadProject(project.projeto)};
+        option.innerHTML = `
+                            <span><i class="fa-solid fa-folder"></i> ${project.projeto} </span>
+                            <span class="w3-right">
+                                <span onclick="downloadProject('${project.projeto}')" class="w3-small w3-tag w3-round w3-blue"><i class="fa-solid fa-download"></i></span>
+                                <span onclick="deleteProject('${project.projeto}')" class="w3-small w3-tag w3-round w3-red"><i class="fa-solid fa-trash"></i></span>
+                            </span>
+        `;
+        savedProjects.appendChild(option);
+    });
+}
+loadProjects()
+// Função para carregar um projeto salvo
+function loadProject(project) {
+    var projectName = project
+    if (projectName) {
+        var projects = JSON.parse(localStorage.getItem("htmlpad") || "[]");
+        var projectData = projects.find(function(project) {
+            return project.projeto === projectName;
+        });
+        if (projectData) {
+            html.session.setValue(projectData.content.html);
+            css.session.setValue(projectData.content.css);
+            javascript.session.setValue(projectData.content.js);
+        }
+    }
+}
+
+// Função para excluir o projeto
+function deleteProject(project) {
+    var projectName = project;
+    if (projectName && confirm("Tem certeza de que deseja excluir o projeto '" + projectName + "'?")) {
+        var projects = JSON.parse(localStorage.getItem("htmlpad") || "[]");
+        projects = projects.filter(function(project) {
+            return project.projeto !== projectName;
+        });
+        localStorage.setItem("htmlpad", JSON.stringify(projects));
+        loadProjects();
+    }
+}
+
+// Função para baixar o projeto
+function downloadProject(project) {
+    var projectName = project;
+    if (projectName) {
+        var projects = JSON.parse(localStorage.getItem("htmlpad") || "[]");
+        var projectData = projects.find(function(project) {
+            return project.projeto === projectName;
+        });
+        if (projectData) {
+            var zip = new JSZip();
+            zip.file(projectName + ".json", JSON.stringify(projectData));
+            zip.file("index.html", projectData.content.html || '');
+            zip.file("style.css", projectData.content.css || '');
+            zip.file("script.js", projectData.content.js || '');
+            zip.generateAsync({type:"blob"})
+                .then(function(content) {
+                    saveAs(content, projectName + ".zip");
+                });
+        }
+    }
+}
 
 //LUMAADS
 $(document).ready(function() {

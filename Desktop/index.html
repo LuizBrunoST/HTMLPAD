@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <title>HTMLPAD++ Desktop</title>
     <meta charset="UTF-8">
@@ -14,7 +15,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="icones/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="icones/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="icones/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="icones/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="icones/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icones/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="icones/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icones/favicon-16x16.png">
@@ -38,42 +39,56 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <script>
-    (function (d, w){
-        var s = d.createElement("script")
-        s.type = "text/javascript"
-        s.src = "https://www.lumamax.com.br/api/sdkAds/adsmax.js"
-        d.getElementsByTagName('head')[0].appendChild(s)
-    })(document, window)
+        (function (d, w) {
+            var s = d.createElement("script")
+            s.type = "text/javascript"
+            s.src = "https://www.lumamax.com.br/api/sdkAds/adsmax.js"
+            d.getElementsByTagName('head')[0].appendChild(s)
+        })(document, window)
     </script>
 </head>
+
 <body class="w3-theme-l1">
+
+
+
     <!-- MODALS -->
     <!-- MODAL SOBRE -->
-    <div class="w3-modal" id="modal-sobre" style="z-index:9999;">
-        <div class="w3-modal-content w3-theme-l1 w3-animate-opacity w3-card-4 w3-round-xlarge w3-border" style="overflow: hidden;">
+    <div class="w3-modal" id="modal-sobre" style="z-index:6;">
+        <div class="w3-modal-content w3-theme-l1 w3-animate-opacity w3-card-4 w3-round-xlarge w3-border"
+            style="overflow: hidden;">
             <div class="w3-container">
                 <div class="w3-center">
                     <h2>HTMLPAD++ v<span id="version"></span></h2>
-                    <p>Explore nosso editor de código online para HTML, CSS e JavaScript. Três abas separadas para edição, visualização em tempo real e destaque de sintaxe. Crie páginas web incríveis de maneira eficiente.</p>
+                    <p>Explore nosso editor de código online para HTML, CSS e JavaScript. Três abas separadas para
+                        edição, visualização em tempo real e destaque de sintaxe. Crie páginas web incríveis de maneira
+                        eficiente.</p>
                 </div>
                 <div class="w3-row">
                     <div class="w3-col s4 w3-center">
                         Redes sociais: <br>
-                        <a class="w3-button w3-round w3-theme" href="https://www.facebook.com/lumamaxmax" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                        <a class="w3-button w3-round w3-theme" href="https://github.com/LuizBrunoST/" target="_blank"><i class="fa-brands fa-github"></i></a>
-                        <a class="w3-button w3-round w3-theme" href="https://www.youtube.com/@lumamax_oficial" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-                        <a class="w3-button w3-round w3-theme" href="https://www.instagram.com/lumamax_oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a class="w3-button w3-round w3-theme" href="https://www.facebook.com/lumamaxmax"
+                            target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a class="w3-button w3-round w3-theme" href="https://github.com/LuizBrunoST/" target="_blank"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a class="w3-button w3-round w3-theme" href="https://www.youtube.com/@lumamax_oficial"
+                            target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                        <a class="w3-button w3-round w3-theme" href="https://www.instagram.com/lumamax_oficial/"
+                            target="_blank"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                     <div class="w3-col s4 w3-center">
                         <p class="w3-small">Copyright &copy; LUMAMAX 2018</p>
+                        <a class="w3-button w3-round w3-theme" href="https://www.paypal.com/donate/?hosted_button_id=54V8JBM3G78N8" target="_blank" rel="noopener noreferrer">Doe para o nossos Projetos <i class="fa-solid fa-hand-holding-dollar"></i></a>
                     </div>
                     <div class="w3-col s4 w3-center">
                         <p>Projeto no GitHub</p>
-                        <a class="w3-button w3-round w3-theme" href="https://github.com/LuizBrunoST/HTMLPAD" title="Repositório no Github"><i class="fa-brands fa-github"></i></a>
+                        <a class="w3-button w3-round w3-theme" href="https://github.com/LuizBrunoST/HTMLPAD"
+                            title="Repositório no Github"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
-                <p class="w3-small w3-opacity"><i>Powered by <a href="https://www.lumamax.com.br" target="_blank">LUMAMAX.COM.BR</a></i></p>
-                
+                <p class="w3-small w3-opacity"><i>Powered by <a href="https://www.lumamax.com.br"
+                            target="_blank">LUMAMAX.COM.BR</a></i></p>
+
             </div>
             <footer class="w3-bar w3-padding w3-theme">
                 <div class="w3-right">
@@ -85,98 +100,152 @@
     <!-- MODAL SOBRE FIM -->
     <!-- MODALS FIM -->
 
-
-    <div class="w3-theme-l1 w3-animate-opacity" id="editor-default">
-        <div class="w3-bar w3-theme">
-            <img class="w3-left" src="icones/android-icon-36x36.png">
-            <span class="w3-bar-item" style="text-shadow: 0px 1px 1px #000;">HTMLPAD++</span>
-
-            <div class="w3-right">
-                <span class="w3-button w3-red w3-hover-red" id="btn-fechar-janela"><i class="fa-solid fa-xmark"></i></span>
-            </div>
-        </div>
-
-        <div class="w3-theme-l1 w3-bar" style="height: 38px;">
-            <div class="w3-dropdown-hover">
-                <span class="w3-button">Arquivo</span>
-                <div class="w3-dropdown-content w3-bar-block" style="position: fixed; z-index:9999;">
-                    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-folder-open"></i> Abrir</a>
-                    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-hide-medium w3-hide-small" id="btn-salvar"><i class="fa-solid fa-download"></i> Baixar</a>
-                    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-hide-large" id="btn-salvar-mobile"><i class="fa-solid fa-download"></i> Baixar</a>
-                    <hr>
-                    <a href="#" class="w3-bar-item w3-button" id="exibir-navegador"></a>
-                    <hr>
-                    <a href="#" class="w3-bar-item w3-button"><i class="fa-solid fa-xmark"></i> Sair</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover">
-                <span class="w3-button">Editar</span>
-                <div class="w3-dropdown-content w3-bar-block" style="position: fixed; z-index:9999;">
-                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-cut"></i> Cortar</a>
-                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-copy"></i> Copiar</a>
-                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-paste"></i> Colar</a>
-                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-cut"></i> Recortar</a>
-                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-undo"></i> Desfazer</a>
-                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-redo"></i> Refazer</a>
-                    <hr>
-                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-search"></i> Procurar</a>
-                    <a href="#" class="w3-bar-item w3-button"><i class="far fa-object-group"></i> Selecionar</a>
-                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-trash-alt"></i> Limpar</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover">
-                <span class="w3-button">Janela</span>
-                <div class="w3-dropdown-content w3-bar-block" style="position: fixed; z-index:9999;">
-                    <a href="#" class="w3-bar-item w3-button"><i class="fab fa-android"></i> Aplicativo android</a>
-                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-columns"></i> Site</a>
-                    <a href="#" class="w3-bar-item w3-button"><i class="fas fa-compress"></i> Editor fullscreen</a>
-                    <a href="index.html" class="w3-bar-item w3-button">Editor default</a>
-                    <a href="" class="w3-bar-item w3-button">Preferências</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover">
-                <span class="w3-button">Ajuda</span>
-                <div class="w3-dropdown-content w3-bar-block" style="position: fixed; z-index:9999;">
-                    <a href="javascript:void(0)" onclick="$('#modal-sobre').show()" class="w3-bar-item w3-button">Sobre</a>
-                </div>
-            </div> 
-        </div>
-
-        <div class="adMax1 w3-margin-top w3-margin-buttom" id="adMax1"></div>
-
-
-        <div class="w3-card-4 w3-theme-l1 w3-margin-top w3-hide-large" style="width: 100%; position: relative;">
-            <div class="w3-bar w3-theme">
-                <span class="w3-bar-item w3-theme-action w3-button w3-hover-theme" id="btn-html-mobile"><i class="fab fa-html5"></i> html</span>
-                <span class="w3-bar-item w3-button w3-hover-theme" id="btn-css-mobile"><i class="fab fa-css3-alt"></i> css</span>
-                <span class="w3-bar-item w3-button w3-hover-theme" id="btn-javascript-mobile"><i class="fab fa-js"></i> javascript</span>
-    
-                <span class="w3-bar-item w3-right w3-button w3-theme-action" id="btn-preview-mobile"><i class="fas fa-bug"></i> Testar</span>
-            </div>
-            <div id="html-mobile"></div>
-            <div id="css-mobile"></div>
-            <div id="javascript-mobile"></div>
-            <iframe id="preview-mobile"></iframe>
-        </div>
-
-        <div class="w3-card-4 w3-theme-l1 w3-margin-top w3-hide-medium w3-hide-small" style="width: 100%; position: relative;">
-            <div class="w3-bar w3-theme">
-                <span class="w3-bar-item w3-right w3-button w3-theme-action" id="btn-preview"><i class="fas fa-bug"></i> Testar</span>
-            </div>
-
-            <div class="container">
-                <div id="html" class="resizable w3-display-container" title="HTML"></div>
-                <div id="css" class="resizable" title="CSS"></div>
-                <div id="javascript" class="resizable" title="JAVASCRIPT"></div>
-                <iframe id="preview" class="preview resizable"></iframe>
-            </div>
-        </div>
-
-        <div class="adMax2 w3-margin-top w3-margin-buttom" id="adMax2"></div>
+    <!-- Top container -->
+    <div class="w3-bar w3-top w3-theme w3-large" style="z-index:5">
+        <a href="./" class="w3-bar-item w3-hide-small">
+            <img src="icones/android-icon-36x36.png" height="30" alt="HTMLPAD++">
+        </a>
+        <span class="w3-bar-item w3-hide-small" style="text-shadow: 0px 1px 1px #000;">HTMLPAD++</span>
+        <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i> Menu</button>
+        
+        
     </div>
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-collapse w3-theme w3-animate-left" style="z-index:5;width:300px;" id="mySidebar"><br>
+        <div class="w3-container w3-row">
+            <div class="w3-col s4">
+                <img src="icones/android-icon-36x36.png" class="w3-circle w3-margin-right" style="width:46px">
+            </div>
+            <div class="w3-col s8 w3-bar">
+                <span>Bem vindo, <strong>HTMLPAD++</strong></span><br>
+                <a href="#" class="w3-bar-item w3-button"><i class="fa-solid fa-bell"></i></a>
+                <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
+                <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
+            </div>
+        </div>
+        <hr>
+        <div class="w3-container">
+            <h5>Projetos</h5>
+        </div>
+        <div class="w3-bar-block">
+            <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i> Close Menu</a>
+            <div id="savedProjects"></div>
+            <hr>
+        </div>
+    </nav>
+
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+    <main id="editor-default" class="w3-main" style="margin-left:300px;margin-top:43px;">
+        <div class="w3-theme-l1 w3-animate-opacity">
+
+            <div class="w3-theme-l1 w3-bar" style="height: 38px;">
+                <div class="w3-dropdown-hover">
+                    <span class="w3-button">Arquivo</span>
+                    <div class="w3-dropdown-content w3-bar-block" style="position: fixed; z-index:9999;">
+                        <a href="#" class="w3-bar-item w3-button" onclick="saveProject()"><i class="fa-solid fa-folder-plus"></i> Salvar projeto</a>
+                        <a href="#" class="w3-bar-item w3-button"><i class="fa fa-folder-open"></i> Abrir</a>
+                        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-hide-medium w3-hide-small" id="btn-salvar"><i class="fa-solid fa-download"></i> Baixar</a>
+                        <hr>
+                        <a href="#" class="w3-bar-item w3-button" id="exibir-navegador"></a>
+                        <hr>
+                        <a href="#" class="w3-bar-item w3-button"><i class="fa-solid fa-xmark"></i> Sair</a>
+                    </div>
+                </div>
+                <div class="w3-dropdown-hover">
+                    <span class="w3-button">Editar</span>
+                    <div class="w3-dropdown-content w3-bar-block" style="position: fixed; z-index:9999;">
+                        <a href="#" class="w3-bar-item w3-button"><i class="fas fa-cut"></i> Cortar</a>
+                        <a href="#" class="w3-bar-item w3-button"><i class="fas fa-copy"></i> Copiar</a>
+                        <a href="#" class="w3-bar-item w3-button"><i class="fas fa-paste"></i> Colar</a>
+                        <a href="#" class="w3-bar-item w3-button"><i class="fas fa-cut"></i> Recortar</a>
+                        <a href="#" class="w3-bar-item w3-button"><i class="fas fa-undo"></i> Desfazer</a>
+                        <a href="#" class="w3-bar-item w3-button"><i class="fas fa-redo"></i> Refazer</a>
+                        <hr>
+                        <a href="#" class="w3-bar-item w3-button"><i class="fas fa-search"></i> Procurar</a>
+                        <a href="#" class="w3-bar-item w3-button"><i class="far fa-object-group"></i> Selecionar</a>
+                        <a href="#" class="w3-bar-item w3-button"><i class="fas fa-trash-alt"></i> Limpar</a>
+                    </div>
+                </div>
+                <div class="w3-dropdown-hover">
+                    <span class="w3-button">Janela</span>
+                    <div class="w3-dropdown-content w3-bar-block" style="position: fixed; z-index:9999;">
+                        <a href="#" class="w3-bar-item w3-button"><i class="fab fa-android"></i> Aplicativo android</a>
+                        <a href="#" class="w3-bar-item w3-button"><i class="fas fa-columns"></i> Site</a>
+                        <a href="#" class="w3-bar-item w3-button"><i class="fas fa-compress"></i> Editor fullscreen</a>
+                        <a href="#" class="w3-bar-item w3-button">Editor default</a>
+                        <a href="#" class="w3-bar-item w3-button">Preferências</a>
+                    </div>
+                </div>
+                <div class="w3-dropdown-hover">
+                    <span class="w3-button">Ajuda</span>
+                    <div class="w3-dropdown-content w3-bar-block" style="position: fixed; z-index:9999;">
+                        <a href="javascript:void(0)" onclick="$('#modal-sobre').show()"
+                            class="w3-bar-item w3-button">Sobre</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="adMax1 w3-margin-top w3-margin-buttom" id="adMax1"></div>
+
+
+            <div class="w3-card-4 w3-theme-l1 w3-margin-top" style="width: 100%; position: relative;">
+                <div class="w3-bar w3-theme">
+                    <span class="w3-bar-item w3-theme-action w3-button w3-hover-theme" id="btn-html"><i
+                            class="fab fa-html5"></i> html</span>
+                    <span class="w3-bar-item w3-button w3-hover-theme" id="btn-css"><i class="fab fa-css3-alt"></i>
+                        css</span>
+                    <span class="w3-bar-item w3-button w3-hover-theme" id="btn-javascript"><i class="fab fa-js"></i>
+                        javascript</span>
+
+                    <span class="w3-bar-item w3-right w3-button w3-theme-action" id="btn-preview"><i
+                            class="fas fa-bug"></i> Testar</span>
+                </div>
+                <div id="html"></div>
+                <div id="css"></div>
+                <div id="javascript"></div>
+                <iframe id="preview"></iframe>
+            </div>
+
+            <div class="adMax2 w3-margin-top w3-margin-buttom" id="adMax2"></div>
+        </div>
+    </main>
+
 
     <script src="lib/js/funcLoad.js"></script>
     <script src="lib/js/funcJQuery.js"></script>
     <script src="../versao.js"></script>
+
+    <script>
+        // Get the Sidebar
+        var mySidebar = document.getElementById("mySidebar");
+
+        // Get the DIV with overlay effect
+        var overlayBg = document.getElementById("myOverlay");
+
+        // Toggle between showing and hiding the sidebar, and add overlay effect
+        function w3_open() {
+            if (mySidebar.style.display === 'block') {
+                mySidebar.style.display = 'none';
+                overlayBg.style.display = "none";
+            } else {
+                mySidebar.style.display = 'block';
+                overlayBg.style.display = "block";
+            }
+        }
+
+        // Close the sidebar with the close button
+        function w3_close() {
+            mySidebar.style.display = "none";
+            overlayBg.style.display = "none";
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
 </body>
+
 </html>

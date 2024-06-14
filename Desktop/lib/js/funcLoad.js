@@ -10,7 +10,19 @@ $(document).ready(() => {
     })
 	html.setTheme("ace/theme/monokai")
 	html.session.setMode("ace/mode/html")
-    html.session.setValue("<p>Olá, mundo!</p>");
+    html.session.setValue(`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>    
+    `);
     html.setFontSize(13);
     //#endregion
 
@@ -49,76 +61,6 @@ $(document).ready(() => {
     $("#preview").attr("srcdoc", "<style>" + css.getValue("\n") + "</style>" + html.getValue("\n") + "<script>" + javascript.getValue("\n") + "<" + "/script>");
     
 
-    //#region HTML
-    htmlMobile = ace.edit("html-mobile")
-    htmlMobile.setOptions({
-        enableBasicAutocompletion: true,
-        enableSnippets: true,
-        enableLiveAutocompletion: true,
-        tabSize: 4
-    })
-	htmlMobile.setTheme("ace/theme/monokai")
-	htmlMobile.session.setMode("ace/mode/html")
-    htmlMobile.session.setValue("<p>Olá, mundo!</p>")
-    //#endregion
-
-        //#region CSS
-        cssMobile = ace.edit("css-mobile")
-        cssMobile.setOptions({
-            enableBasicAutocompletion: true,
-            enableSnippets: true,
-            enableLiveAutocompletion: true,
-            tabSize: 4
-        })
-        cssMobile.setTheme("ace/theme/monokai")
-        cssMobile.session.setMode("ace/mode/css")
-        cssMobile.session.setValue(
-    `body {
-        background: #fff;
-        color: #000;
-    }`)
-        //#endregion
-    
-        //#region JAVASCRIPT
-        javascriptMobile = ace.edit("javascript-mobile")
-        javascriptMobile.setTheme("ace/theme/monokai")
-        javascriptMobile.session.setMode("ace/mode/javascript")
-        javascriptMobile.session.setValue("console.log(\"Olá mundo!\")")
-        javascriptMobile.setOptions({
-            enableBasicAutocompletion: true,
-            enableSnippets: true,
-            enableLiveAutocompletion: true,
-            tabSize: 4
-        })
-        //#endregion
-
-        $("#preview").attr("srcdoc", "<style>" + cssMobile.getValue("\n") + "</style>" + htmlMobile.getValue("\n") + "<script>" + javascriptMobile.getValue("\n") + "<" + "/script>");
-
-    $(function() {
-        $(".resizable").resizable({
-            handles: "e, w",
-            containment: ".container",
-            resize: function(event, ui) {
-                var containerWidth = $(".container").width();
-                var currentWidth1 = $("#html").width();
-                var currentWidth2 = $("#css").width();
-                var currentWidth3 = $("#javascript").width();
-                var currentWidth4 = $("#preview").width();
-
-                var totalWidth = currentWidth1 + currentWidth2 + currentWidth3 + currentWidth4;
-                var percentageWidth1 = (currentWidth1 / totalWidth) * 100;
-                var percentageWidth2 = (currentWidth2 / totalWidth) * 100;
-                var percentageWidth3 = (currentWidth3 / totalWidth) * 100;
-                var percentageWidth4 = (currentWidth4 / totalWidth) * 100;
-
-                $("#html").width(percentageWidth1 + "%");
-                $("#css").width(percentageWidth2 + "%");
-                $("#javascript").width(percentageWidth3 + "%");
-                $("#preview").width(percentageWidth4 + "%");
-            }
-        });
-    });
-
     //Carregamento depois de 1 segundo (Mostrando objetos nos editores)
     setTimeout(()=>{
         $('#html').append(`
@@ -149,6 +91,5 @@ $(document).ready(() => {
     } else {
         exibirNavegador.html('Erro de navegador');
     }
-
     
 });
