@@ -155,11 +155,11 @@ function loadAds() {
     // Array de URLs e classes de div correspondentes
     var urls = [
         {
-            url: 'https://www.lumamax.com.br/api/sdkAds/ads?id_usuario=1&site=8&id_bloco=14',
+            url: 'https://lumamax.com.br/api/sdkAds/ads?id_usuario=1&site=8&id_bloco=14',
             divClass: '.adMax1'
         },
         {
-            url: 'https://www.lumamax.com.br/api/sdkAds/ads?id_usuario=1&site=8&id_bloco=15',
+            url: 'https://lumamax.com.br/api/sdkAds/ads?id_usuario=1&site=8&id_bloco=15',
             divClass: '.adMax2'
         }
         // Adicione mais objetos URL/divClass conforme necessário
