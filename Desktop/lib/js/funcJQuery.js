@@ -185,6 +185,10 @@ function loadAds() {
         {
             url: 'https://api.thetapejara.com.br/api/adssites/usuario/1/site/2/bloco/5',
             divClass: '.adMax3'
+        },
+        {
+            url: 'https://api.thetapejara.com.br/api/adssites/usuario/1/site/2/bloco/7',
+            divClass: '.interAds'
         }
         // Adicione mais objetos URL/divClass conforme necessário
     ];
