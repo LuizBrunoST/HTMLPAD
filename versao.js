@@ -1,4 +1,4 @@
 $(document).ready(() => {
-    $("#version").html("<i>2.10.0</i>")
+    $("#version").html("<i>2.10.1</i>")
 });
     

@@ -136,6 +136,26 @@ function downloadProject(project) {
     }
 }
 
+setTimeout(() => {
+    let blocked = false;
+
+    if (typeof window.adsLoaded === "undefined") blocked = true;
+
+    if (blocked) {
+        $('body').append(`
+            <div class="w3-modal" style="display:block;" id="modalAdBlock">
+                <div class="w3-modal-content w3-animate-top">
+                    <div class="w3-pale-yellow w3-text-yellow w3-padding w3-border w3-border-yellow w3-round w3-margin-bottom">
+                        <strong>Atenção!</strong>
+                        <span>Detectamos AdBlock. Apoie o site ❤️.</span>
+                        <span class="w3-right w3-font-bold" onclick="$(\'#modalAdBlock\').hide()"><i class="fa-solid fa-xmark"></i></span
+                    </div>
+                </div>
+            </div>
+        `);
+    }
+}, 500);
+
 //LUMAADS
 $(document).ready(function() {
     // Função para realizar a requisição AJAX e atualizar a div com o conteúdo da resposta
@@ -155,12 +175,16 @@ function loadAds() {
     // Array de URLs e classes de div correspondentes
     var urls = [
         {
-            url: 'https://lumamax.com.br/api/sdkAds/ads?id_usuario=1&site=8&id_bloco=14',
+            url: 'https://api.thetapejara.com.br/api/adssites/usuario/1/site/2/bloco/6',
             divClass: '.adMax1'
         },
         {
-            url: 'https://lumamax.com.br/api/sdkAds/ads?id_usuario=1&site=8&id_bloco=15',
+            url: 'https://api.thetapejara.com.br/api/adssites/usuario/1/site/2/bloco/4',
             divClass: '.adMax2'
+        },
+        {
+            url: 'https://api.thetapejara.com.br/api/adssites/usuario/1/site/2/bloco/5',
+            divClass: '.adMax3'
         }
         // Adicione mais objetos URL/divClass conforme necessário
     ];
