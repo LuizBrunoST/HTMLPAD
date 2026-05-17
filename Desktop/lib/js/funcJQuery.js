@@ -175,19 +175,19 @@ function loadAds() {
     // Array de URLs e classes de div correspondentes
     var urls = [
         {
-            url: 'https://api.thetapejara.com.br/api/adssites/usuario/1/site/2/bloco/6',
+            url: 'https://api.thetapejara.com.br/api/adssites/usuario/24/site/2/bloco/6',
             divClass: '.adMax1'
         },
         {
-            url: 'https://api.thetapejara.com.br/api/adssites/usuario/1/site/2/bloco/4',
+            url: 'https://api.thetapejara.com.br/api/adssites/usuario/24/site/2/bloco/4',
             divClass: '.adMax2'
         },
         {
-            url: 'https://api.thetapejara.com.br/api/adssites/usuario/1/site/2/bloco/5',
+            url: 'https://api.thetapejara.com.br/api/adssites/usuario/24/site/2/bloco/5',
             divClass: '.adMax3'
         },
         {
-            url: 'https://api.thetapejara.com.br/api/adssites/usuario/1/site/2/bloco/7',
+            url: 'https://api.thetapejara.com.br/api/adssites/usuario/24/site/2/bloco/7',
             divClass: '.interAds'
         }
         // Adicione mais objetos URL/divClass conforme necessário
