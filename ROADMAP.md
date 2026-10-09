@@ -25,7 +25,7 @@
 
 ## P0 — Segurança e correções
 
-- [ ] Evitar injeção de HTML/JS ao exibir nomes de projetos (textContent e listeners)
+- [x] Evitar injeção de HTML/JS ao exibir nomes de projetos (textContent e listeners)
 - [ ] Isolar prévia com iframe sandbox e revisar permissões necessárias
 - [ ] Impedir nomes duplicados ou usar IDs únicos de projetos
 - [ ] Corrigir ZIP para referenciar CSS e JavaScript no index.html
