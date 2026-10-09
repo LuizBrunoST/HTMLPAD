@@ -63,24 +63,68 @@ function saveProject() {
     }
 }
 
+// Exibe nomes de projetos como texto, sem interpretar HTML ou JavaScript.
+function createProjectAction(iconClass, colorClass, title, callback) {
+    var button = document.createElement("button");
+    button.type = "button";
+    button.classList.add("w3-small", "w3-tag", "w3-round", colorClass, "w3-button");
+    button.title = title;
+    button.setAttribute("aria-label", title);
+
+    var icon = document.createElement("i");
+    icon.className = iconClass;
+    icon.setAttribute("aria-hidden", "true");
+    button.appendChild(icon);
+
+    button.addEventListener("click", function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        callback();
+    });
+    return button;
+}
+
 // Função para carregar os projetos salvos
 function loadProjects() {
     var savedProjects = document.getElementById("savedProjects");
-    savedProjects.innerHTML = "";
+    savedProjects.replaceChildren();
     var projects = JSON.parse(localStorage.getItem("htmlpad") || "[]");
+
     projects.forEach(function(project) {
-        var option = document.createElement("a");
-        option.classList.add('w3-bar-item', 'w3-button', 'w3-padding');
-        option.id = "project_" + project.projeto;
-        option.href = "#project_" + project.projeto;
-        option.onclick = function () {loadProject(project.projeto)};
-        option.innerHTML = `
-                            <span><i class="fa-solid fa-folder"></i> ${project.projeto} </span>
-                            <span class="w3-right">
-                                <span onclick="downloadProject('${project.projeto}')" class="w3-small w3-tag w3-round w3-blue"><i class="fa-solid fa-download"></i></span>
-                                <span onclick="deleteProject('${project.projeto}')" class="w3-small w3-tag w3-round w3-red"><i class="fa-solid fa-trash"></i></span>
-                            </span>
-        `;
+        var projectName = project.projeto;
+        var option = document.createElement("div");
+        option.classList.add("w3-bar-item", "w3-button", "w3-padding");
+        option.setAttribute("role", "button");
+        option.tabIndex = 0;
+
+        var name = document.createElement("span");
+        var folderIcon = document.createElement("i");
+        folderIcon.className = "fa-solid fa-folder";
+        folderIcon.setAttribute("aria-hidden", "true");
+        name.appendChild(folderIcon);
+        name.appendChild(document.createTextNode(" " + projectName + " "));
+        option.appendChild(name);
+
+        var actions = document.createElement("span");
+        actions.classList.add("w3-right");
+        actions.appendChild(createProjectAction(
+            "fa-solid fa-download", "w3-blue", "Baixar projeto " + projectName,
+            function() { downloadProject(projectName); }
+        ));
+        actions.appendChild(document.createTextNode(" "));
+        actions.appendChild(createProjectAction(
+            "fa-solid fa-trash", "w3-red", "Excluir projeto " + projectName,
+            function() { deleteProject(projectName); }
+        ));
+        option.appendChild(actions);
+
+        option.addEventListener("click", function() { loadProject(projectName); });
+        option.addEventListener("keydown", function(event) {
+            if (event.target === option && (event.key === "Enter" || event.key === " ")) {
+                event.preventDefault();
+                loadProject(projectName);
+            }
+        });
         savedProjects.appendChild(option);
     });
 }
