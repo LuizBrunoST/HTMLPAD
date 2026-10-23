@@ -114,32 +114,21 @@
         
     </div>
 
-    <!-- Sidebar/menu -->
-    <nav class="w3-sidebar w3-collapse w3-theme w3-animate-left app-sidebar" style="z-index:5;width:300px;" id="mySidebar"><br>
-        <div class="w3-container w3-row">
-            <div class="w3-col s4">
-                <img src="icones/android-icon-36x36.png" class="w3-circle w3-margin-right" style="width:46px">
-            </div>
-            <div class="w3-col s8 w3-bar">
-                <span>Bem vindo, <strong>HTMLPAD++</strong></span><br>
-                <a href="#" class="w3-bar-item w3-button"><i class="fa-solid fa-bell"></i></a>
-                <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
-                <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
-            </div>
+    <!-- Explorador de projetos: mantém o armazenamento e as ações existentes -->
+    <nav class="w3-sidebar w3-collapse w3-theme w3-animate-left app-sidebar hp-explorer" style="z-index:5;width:300px;" id="mySidebar">
+        <div class="hp-explorer-header">
+            <div class="hp-explorer-brand"><i class="fa-solid fa-code"></i><div><strong>HTMLPAD++</strong><small>EXPLORADOR</small></div></div>
+            <button type="button" class="hp-icon-button w3-hide-large" onclick="w3_close()" aria-label="Fechar menu"><i class="fa-solid fa-xmark"></i></button>
         </div>
-        <hr>
-        <div class="w3-container projects-heading">
-            <h5><i class="fa-solid fa-folder-open"></i> Meus projetos</h5>
-            <button type="button" class="w3-button w3-round app-new-project" onclick="saveProject()"><i class="fa-solid fa-plus"></i> Salvar projeto</button>
+        <div class="hp-projects-panel">
+            <div class="hp-section-title"><span><i class="fa-solid fa-folder-open"></i> Meus projetos</span><span class="hp-count" id="hp-project-count">0</span></div>
+            <button type="button" class="hp-primary-button" onclick="saveProject()"><i class="fa-solid fa-plus"></i> Salvar projeto</button>
+            <label class="hp-project-search"><i class="fa-solid fa-magnifying-glass"></i><input id="hp-project-search" type="search" placeholder="Buscar projetos..." autocomplete="off" aria-label="Buscar projetos salvos"></label>
         </div>
-        <div class="w3-bar-block">
-            <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i> Close Menu</a>
-            <div id="savedProjects"></div>
-            <hr>
-            <div class="adMax3 w3-margin-top w3-margin-buttom" id="adMax3"></div>
-        </div>
+        <div class="hp-explorer-list" id="savedProjects"></div>
+        <div class="hp-sidebar-footer"><i class="fa-solid fa-hard-drive"></i> Projetos neste navegador <i class="fa-solid fa-circle-info" title="Os projetos são armazenados localmente no navegador."></i></div>
+        <div class="adMax3 w3-margin-top w3-margin-buttom" id="adMax3"></div>
     </nav>
-
 
     <!-- Overlay effect when opening sidebar on small screens -->
     <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
