@@ -84,8 +84,105 @@ function createProjectAction(iconClass, colorClass, title, callback) {
     return button;
 }
 
-// Função para carregar os projetos salvos
+// Explorador de projetos: nomes sempre tratados como texto, nunca como HTML.
 function loadProjects() {
+    var root = document.getElementById("savedProjects");
+    var projects = JSON.parse(localStorage.getItem("htmlpad") || "[]");
+    var search = document.getElementById("hp-project-search");
+    var query = search ? search.value.trim().toLocaleLowerCase() : "";
+    var count = document.getElementById("hp-project-count");
+    if (count) count.textContent = String(projects.length);
+    var expanded = new Set(Array.from(root.querySelectorAll(".hp-project-folder[open]")).map(function(el) { return el.dataset.projectIndex; }));
+    root.replaceChildren();
+
+    var shown = 0;
+    projects.forEach(function(project, index) {
+        var projectName = String(project.projeto || "");
+        if (query && !projectName.toLocaleLowerCase().includes(query)) return;
+        shown++;
+        var folder = document.createElement("details");
+        folder.className = "hp-project-folder";
+        folder.dataset.projectIndex = String(index);
+        folder.open = expanded.has(String(index));
+
+        var header = document.createElement("summary");
+        header.className = "hp-folder-header";
+        var chevron = document.createElement("i");
+        chevron.className = "fa-solid fa-chevron-right hp-chevron";
+        var icon = document.createElement("i");
+        icon.className = "fa-solid fa-folder hp-folder-icon";
+        var label = document.createElement("span");
+        label.className = "hp-folder-name";
+        label.textContent = projectName;
+        label.title = projectName;
+        header.append(chevron, icon, label);
+
+        var menu = document.createElement("details");
+        menu.className = "hp-project-menu";
+        var menuToggle = document.createElement("summary");
+        menuToggle.className = "hp-menu-trigger";
+        menuToggle.title = "Ações do projeto";
+        menuToggle.setAttribute("aria-label", "Ações de " + projectName);
+        var dots = document.createElement("i");
+        dots.className = "fa-solid fa-ellipsis-vertical";
+        menuToggle.appendChild(dots);
+        menuToggle.addEventListener("click", function(e) { e.stopPropagation(); });
+        menu.appendChild(menuToggle);
+        var actions = document.createElement("div");
+        actions.className = "hp-menu-actions";
+        function action(text, iconName, callback) {
+            var button = document.createElement("button");
+            button.type = "button";
+            var ico = document.createElement("i");
+            ico.className = "fa-solid " + iconName;
+            button.append(ico, document.createTextNode(" " + text));
+            button.addEventListener("click", function(e) {
+                e.stopPropagation();
+                menu.open = false;
+                callback();
+            });
+            actions.appendChild(button);
+        }
+        action("Abrir", "fa-folder-open", function() { loadProject(projectName); });
+        action("Baixar ZIP", "fa-download", function() { downloadProject(projectName); });
+        action("Excluir", "fa-trash", function() { deleteProject(projectName); });
+        menu.appendChild(actions);
+        menu.addEventListener("click", function(e) { e.stopPropagation(); });
+        header.appendChild(menu);
+        folder.appendChild(header);
+
+        var files = document.createElement("div");
+        files.className = "hp-project-files";
+        [
+            ["index.html", "html", "fa-brands fa-html5", "hp-html-icon"],
+            ["style.css", "css", "fa-brands fa-css3-alt", "hp-css-icon"],
+            ["script.js", "javascript", "fa-brands fa-js", "hp-js-icon"]
+        ].forEach(function(file) {
+            var button = document.createElement("button");
+            button.type = "button";
+            button.className = "hp-file-entry";
+            var fileIcon = document.createElement("i");
+            fileIcon.className = file[2] + " " + file[3];
+            button.append(fileIcon, document.createTextNode(file[0]));
+            button.addEventListener("click", function() {
+                loadProject(projectName);
+                document.getElementById("btn-" + file[1]).click();
+                if (window.innerWidth <= 992 && typeof w3_close === "function") w3_close();
+            });
+            files.appendChild(button);
+        });
+        folder.appendChild(files);
+        root.appendChild(folder);
+    });
+    if (!shown) {
+        var empty = document.createElement("p");
+        empty.className = "hp-empty-projects";
+        empty.textContent = query ? "Nenhum projeto encontrado." : "Nenhum projeto salvo ainda.";
+        root.appendChild(empty);
+    }
+}
+document.getElementById("hp-project-search")?.addEventListener("input", loadProjects);
+loadProjects() {
     var savedProjects = document.getElementById("savedProjects");
     savedProjects.replaceChildren();
     var projects = JSON.parse(localStorage.getItem("htmlpad") || "[]");
