@@ -48,3 +48,15 @@ body.htmlpad-modern{background:var(--hp-bg)!important;color:var(--hp-text)!impor
 .htmlpad-modern .w3-modal-content .w3-theme-action{background:#256be5!important}
 @media(max-width:992px){.htmlpad-modern .app-main{margin-left:0!important;padding:15px}.htmlpad-modern .app-sidebar{top:68px!important}.app-workspace-title{flex-wrap:wrap}.app-workspace-title h1{font-size:21px}.app-workspace-actions{width:100%}.app-editor-tabs{flex-wrap:wrap}.app-editor-tabs .w3-bar-item{padding:9px 10px!important}.htmlpad-modern #html,.htmlpad-modern #css,.htmlpad-modern #javascript,.htmlpad-modern #preview{min-height:60vh;height:60vh}}
 @media(max-width:600px){.app-topbar{justify-content:flex-start}.app-workspace-title h1{font-size:19px}.app-workspace-actions .w3-button{font-size:11px}.app-editor-tabs #btn-preview{margin-left:0!important}.app-editor-tabs{gap:2px}.app-menubar .w3-dropdown-hover>.w3-button{padding:8px!important;font-size:12px}}
+
+/* Active tab and compact editor status bar */
+.app-editor-tabs .hp-tab-active{background:#1b3659!important;color:#fff!important;box-shadow:inset 0 -2px var(--hp-blue)!important}
+.app-editor-tabs #btn-preview.hp-tab-active{box-shadow:inset 0 -3px #83ffce!important}
+.app-statusbar{min-height:32px;display:flex;align-items:center;gap:18px;padding:7px 14px;background:#111f34;border-top:1px solid var(--hp-border);font-size:11px;color:#a9bdd7}
+.app-statusbar #hp-current-language{color:#73baff;font-weight:750}
+.app-statusbar #hp-status{margin-left:auto;display:flex;align-items:center;gap:7px}
+.app-statusbar #hp-status:before{content:"";width:7px;height:7px;border-radius:50%;background:#36ce9c;display:inline-block}
+.app-statusbar #hp-status.hp-dirty:before{background:#f3b84b}
+.app-statusbar #hp-status.hp-dirty{color:#ffd38b}
+.app-statusbar .hp-status-version{color:#7c91b1}
+@media(max-width:600px){.app-statusbar{gap:9px;font-size:10px;flex-wrap:wrap}.app-statusbar #hp-status{margin-left:0}.app-statusbar .hp-status-version{margin-left:auto}}
