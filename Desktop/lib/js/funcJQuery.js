@@ -166,9 +166,11 @@ function loadProjects() {
             fileIcon.className = file[2] + " " + file[3];
             button.append(fileIcon, document.createTextNode(file[0]));
             button.addEventListener("click", function() {
-                loadProject(index);
-                document.getElementById("btn-" + file[1]).click();
-                if (window.innerWidth <= 992 && typeof w3_close === "function") w3_close();
+                Promise.resolve(loadProject(index)).then(function(opened){
+                    if(!opened)return;
+                    document.getElementById("btn-" + file[1]).click();
+                    if (window.innerWidth <= 992 && typeof w3_close === "function") w3_close();
+                });
             });
             files.appendChild(button);
         });
