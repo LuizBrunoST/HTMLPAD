@@ -143,9 +143,10 @@ function loadProjects() {
             });
             actions.appendChild(button);
         }
-        action("Abrir", "fa-folder-open", function() { loadProject(projectName); });
-        action("Baixar ZIP", "fa-download", function() { downloadProject(projectName); });
-        action("Excluir", "fa-trash", function() { deleteProject(projectName); });
+        action("Abrir", "fa-folder-open", function() { loadProject(index); });
+        action("Renomear", "fa-pen", function() { renameProject(index); });
+        action("Baixar ZIP", "fa-download", function() { downloadProject(index); });
+        action("Excluir", "fa-trash", function() { deleteProject(index); });
         menu.appendChild(actions);
         menu.addEventListener("click", function(e) { e.stopPropagation(); });
         header.appendChild(menu);
@@ -165,7 +166,7 @@ function loadProjects() {
             fileIcon.className = file[2] + " " + file[3];
             button.append(fileIcon, document.createTextNode(file[0]));
             button.addEventListener("click", function() {
-                loadProject(projectName);
+                loadProject(index);
                 document.getElementById("btn-" + file[1]).click();
                 if (window.innerWidth <= 992 && typeof w3_close === "function") w3_close();
             });
