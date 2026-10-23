@@ -7,7 +7,7 @@
     var split = false;
     var previewRefresh = null;
     var stage = document.getElementById("hp-editor-stage");
-    var preview = document.getElementById("preview");
+    var preview = document.getElementById("preview");\n    var previewPane = document.getElementById("hp-preview-pane");
     var splitButton = document.getElementById("hp-tabs-split");
     function renderPreview() {
         var source = "<style>" + editors.css.getValue() + "</style>" + editors.html.getValue() + "<script>" + editors.javascript.getValue() + "<" + "/script>";
@@ -24,11 +24,11 @@
         splitButton.setAttribute("aria-pressed",String(split));
         if(split){
             ["html","css","javascript"].forEach(function(id){document.getElementById(id).style.display=id===lastCodeTab?"block":"none";});
-            preview.style.display="block";
+            previewPane.style.display="flex";\n            preview.style.display="block";
             renderPreview();
             requestAnimationFrame(function(){editors[lastCodeTab].resize();});
         } else {
-            preview.style.display=active==="preview"?"block":"none";
+            previewPane.style.display=active==="preview"?"flex":"none";\n            preview.style.display=active==="preview"?"block":"none";
             ["html","css","javascript"].forEach(function(id){document.getElementById(id).style.display=active===id?"block":"none";});
             if(active!=="preview")requestAnimationFrame(function(){editors[active].resize();});
         }
