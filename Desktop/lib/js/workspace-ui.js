@@ -4,6 +4,7 @@
     var names = {html:"HTML",css:"CSS",javascript:"JavaScript",preview:"Pré-visualização"};
     var active = "html";
     var dirty = false;
+    var baselineValues = {};
     var baseline = null;
     var editors = {html:window.html,css:window.css,javascript:window.javascript};
     var status = document.getElementById("hp-status");
@@ -18,6 +19,7 @@
     }
     function setBaseline() {
         baseline = snapshot();
+        Object.keys(editors).forEach(function(id){baselineValues[id] = editors[id].getValue();});
         refreshDirty();
     }
     function refreshDirty() {
@@ -25,6 +27,10 @@
         status.textContent = dirty ? "Alterações não salvas" : "Sem alterações pendentes";
         status.classList.toggle("hp-dirty",dirty);
         status.classList.toggle("hp-saved",!dirty);
+        Object.keys(editors).forEach(function(id){
+            var tab=document.getElementById("btn-"+id);
+            if(tab)tab.classList.toggle("hp-has-changes",editors[id].getValue()!==baselineValues[id]);
+        });
     }
     function refreshCursor() {
         if (active === "preview") {position.textContent = "Visualização";return;}
@@ -66,6 +72,19 @@
         var originalLoad=window.loadProject;
         window.loadProject=function(){originalLoad.apply(this,arguments);setBaseline();refreshCursor();};
     }
+    document.addEventListener("keydown",function(event){
+        if((event.ctrlKey||event.metaKey) && !event.altKey && !event.shiftKey && /^[1-4]$/.test(event.key)){
+            event.preventDefault();
+            var tabs=["html","css","javascript","preview"];
+            document.getElementById("btn-"+tabs[Number(event.key)-1]).click();
+        }
+    });
+    var fullscreenButton=document.getElementById("hp-tabs-fullscreen");
+    if(fullscreenButton)fullscreenButton.addEventListener("click",function(){
+        var card=document.querySelector(".app-editor-card");
+        if(document.fullscreenElement){document.exitFullscreen();}
+        else if(card&&card.requestFullscreen)card.requestFullscreen().catch(function(){alert("Tela cheia indisponível.");});
+    });
     var version=document.getElementById("version");
     var statusVersion=document.getElementById("hp-version");
     if(version && statusVersion) statusVersion.textContent=version.textContent||"—";
