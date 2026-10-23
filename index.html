@@ -1,93 +1,73 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <title>HTMLPAD++ - Escolha</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="57x57" href="Desktop/icones/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="Desktop/icones/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="Desktop/icones/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="Desktop/icones/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="Desktop/icones/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="Desktop/icones/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="Desktop/icones/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="Desktop/icones/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="Desktop/icones/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="Desktop/icones/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="Desktop/icones/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="Desktop/icones/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="Desktop/icones/favicon-16x16.png">
-    <link rel="manifest" href="Desktop/icones/manifest.json">
-    <meta name="msapplication-TileColor" content="#333">
-    <meta name="msapplication-TileImage" content="Desktop/icones/ms-icon-144x144.png">
-    <meta name="theme-color" content="#333">
-
-    <meta name="author" content="LUMAMAX | Luiz Bruno">
-    <meta name="description" content="Explore nosso editor de código online para HTML, CSS e JavaScript. Três abas separadas para edição, visualização em tempo real e destaque de sintaxe. Crie páginas web incríveis de maneira eficiente.">
-    <meta name="keywords" content="editor online, editor html, editor javascript, editor css">
-    <meta property="og:image" content="https://luizbrunost.github.io/HTMLPAD/Desktop/icones/apple-icon-180x180.png">
-    <meta property="og:url" content="https://luizbrunost.github.io/HTMLPAD">
-    <meta property="og:type" content="website">
-
-    <link rel="stylesheet" href="Desktop/lib/css/w3.css">
-    <link rel="stylesheet" href="Desktop/lib/css/thema.css">
-    <link rel="stylesheet" href="Desktop/lib/fontAwesome/css/all.min.css">
-    <link rel="stylesheet" href="Desktop/lib/fontAwesome/css/brands.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <script src="Desktop/lib/js/jquery-3.6.0.min.js"></script>
-    <script src="versao.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1425">
+<meta name="author" content="The Tapejara">
+<meta name="description" content="HTMLPAD++: editor de HTML, CSS e JavaScript no navegador, com pré-visualização, console e projetos locais.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HTMLPAD++ — Crie. Desenvolva. Visualize.">
+<meta property="og:description" content="Seu ambiente de desenvolvimento web diretamente no navegador.">
+<meta property="og:url" content="https://luizbrunost.github.io/HTMLPAD/">
+<meta property="og:image" content="https://luizbrunost.github.io/HTMLPAD/Desktop/icones/android-icon-192x192.png">
+<link rel="icon" type="image/png" href="Desktop/icones/favicon-32x32.png">
+<link rel="apple-touch-icon" href="Desktop/icones/apple-icon-180x180.png">
+<title>HTMLPAD++ — Editor web de HTML, CSS e JavaScript</title>
+<style>
+:root{color-scheme:dark;--bg:#081120;--panel:#12223a;--line:#2a4260;--text:#f2f7ff;--muted:#a5b9d5;--blue:#4aa5ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 78% 10%,#17375e 0%,transparent 44%),var(--bg);color:var(--text);font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit;text-decoration:none}button,a{touch-action:manipulation}a:focus-visible{outline:3px solid #69baff;outline-offset:4px;border-radius:6px}
+.container{width:min(1100px,calc(100% - 40px));margin-inline:auto}
+.topbar{border-bottom:1px solid #263c57;background:#0a1425e8;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+.topbar-inner{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:inline-flex;align-items:center;gap:12px;font-weight:850;font-size:20px;letter-spacing:-.6px;white-space:nowrap}
+.brand-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#175de3,#4bb9ff);font-weight:900;color:white;font-size:19px}
+.brand strong{color:#6bc0ff}.nav{display:flex;align-items:center;gap:22px;font-size:13px;color:#c5d6ee}.nav a:hover{color:white}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 20px;border:1px solid #3c5878;border-radius:11px;font-size:14px;font-weight:750;transition:transform .15s,background .15s;background:#1a2c46}
+.btn:hover{transform:translateY(-2px);background:#284668}.btn-primary{border-color:#277bf2;background:linear-gradient(110deg,#1660e6,#318efa);box-shadow:0 10px 32px #1264eb35;color:#fff}.btn-primary:hover{background:#328bff}
+.hero{padding:105px 0 75px;text-align:center}.eyebrow{color:#77bfff;letter-spacing:2.3px;text-transform:uppercase;font-size:11px;font-weight:850}
+h1{font-size:clamp(34px,6vw,64px);letter-spacing:-2px;line-height:1.12;margin:18px auto 20px;max-width:850px}h1 span{color:#6ab9ff}
+.hero p{max-width:640px;margin:0 auto;color:#b4c7e1;font-size:17px}.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:32px 0}
+.hero-note{color:#859bb9;font-size:12px}.hero-note span{color:#6ee0b2}
+.showcase{background:#0e1c30;border:1px solid #355071;border-radius:18px;overflow:hidden;box-shadow:0 30px 80px #0006;margin:10px auto 90px}
+.showcase-top{height:43px;display:flex;align-items:center;gap:8px;padding:0 16px;border-bottom:1px solid #2a425e;color:#a8bedb;font-size:12px}.dot{width:9px;height:9px;border-radius:50%;background:#ff7975}.dot:nth-child(2){background:#f4bf5a}.dot:nth-child(3){background:#52caa3}.showcase-title{margin-left:12px}
+.showcase-content{display:grid;grid-template-columns:1.1fr .9fr;min-height:260px}
+.code{padding:22px;background:#101d30;border-right:1px solid #29415f;overflow:auto;font:13px/1.95 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre;color:#d4e5fb}.code .tag{color:#f4a46f}.code .attr{color:#a5cfff}.code .str{color:#b8e58b}
+.mock-preview{background:#fff;color:#20324d;padding:35px 28px;display:flex;flex-direction:column;justify-content:center}.mock-preview strong{font-size:28px}.mock-preview p{color:#687b96;margin:7px 0 18px}.mock-preview .sample{align-self:flex-start;border-radius:8px;background:#2677e6;color:white;padding:8px 15px;font-size:12px;font-weight:700}
+.mock-console{grid-column:1/-1;border-top:1px solid #304966;background:#0b1628;padding:12px 20px;color:#9db8d8;font:12px ui-monospace,monospace}.mock-console strong{color:#6abaff;margin-right:16px}.mock-console span{color:#6ce0a4}
+.section{padding:0 0 85px}.section-heading{text-align:center;margin-bottom:27px}.section-heading h2{font-size:30px;letter-spacing:-.7px;margin:8px 0}.section-heading p{color:var(--muted);margin:0}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{background:#112039;border:1px solid var(--line);border-radius:15px;padding:25px}.feature .symbol{display:grid;place-items:center;background:#183e70;color:#83c4ff;border-radius:11px;width:43px;height:43px;font-size:22px;margin-bottom:17px}.feature h3{font-size:17px;margin:0 0 8px}.feature p{color:var(--muted);font-size:13px;margin:0}
+.roadmap{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.roadmap-item{padding:23px;border:1px solid #2b415c;border-radius:14px;background:#101d30}.roadmap-item h3{margin:0 0 8px;font-size:16px}.roadmap-item p{color:var(--muted);font-size:13px;margin:0 0 15px}.state{font-size:11px;color:#b1c6e1;background:#1c304b;border-radius:20px;padding:5px 10px;display:inline-block}
+.cta{text-align:center;background:linear-gradient(135deg,#122d53,#102039);border:1px solid #2f5380;border-radius:20px;padding:48px 20px;margin-bottom:70px}.cta h2{font-size:29px;margin:0 0 10px}.cta p{color:var(--muted);margin:0 0 23px}
+.footer{border-top:1px solid #293c57;padding:25px 0;color:#8ea7c6;font-size:12px}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}.footer a:hover{color:#fff}
+@media(max-width:760px){.nav .nav-link{display:none}.hero{padding:65px 0 42px}.hero p{font-size:15px}.showcase{margin-bottom:65px}.showcase-content{grid-template-columns:1fr}.code{border-right:0;border-bottom:1px solid #29415f}.mock-preview{min-height:190px}.features,.roadmap{grid-template-columns:1fr}.section{padding-bottom:65px}}
+@media(max-width:420px){.container{width:min(100% - 26px,1100px)}.brand{font-size:17px}.brand-mark{width:35px;height:35px}.nav .btn{padding:9px 12px;font-size:12px}.hero h1{letter-spacing:-1px}.actions .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
 </head>
-<body class="w3-theme-dark">
-    <div class="w3-modal" id="modal1" style="display: block;">
-        <div class="w3-modal-content w3-animate-top w3-card-4">
-            <div class="w3-bar w3-dark-gray w3-card-4">
-                <a href="https://github.com/LuizBrunoST/HTMLPAD" target="_blank" class="w3-bar-item w3-button"><i class="fa-brands fa-github"></i></a>
-                <span onclick="document.getElementById('modal1').style.display='none'" class="w3-button w3-red w3-display-topright">&times;</span>
-            </div>
+<body>
+<header class="topbar"><div class="container topbar-inner">
+<a class="brand" href="./" aria-label="HTMLPAD++ página inicial"><span class="brand-mark" aria-hidden="true">&lt;/&gt;</span><span>HTML<strong>PAD++</strong></span></a>
+<nav class="nav" aria-label="Navegação principal"><a class="nav-link" href="#recursos">Recursos</a><a class="nav-link" href="#futuro">Futuro</a><a class="nav-link" href="Desktop/ajuda.html">Ajuda</a><a class="btn btn-primary" href="Desktop/index.html">Abrir editor →</a></nav>
+</div></header>
+<main>
+<section class="hero container"><div class="eyebrow">Seu ambiente de desenvolvimento web</div><h1>Crie. Desenvolva.<br><span>Visualize.</span></h1><p>Escreva HTML, CSS e JavaScript diretamente no navegador. Teste suas ideias com preview, console integrado e gerenciamento de projetos.</p><div class="actions"><a class="btn btn-primary" href="Desktop/index.html">⌨ &nbsp;Começar a programar →</a><a class="btn" href="Desktop/ajuda.html">◫ &nbsp;Central de ajuda</a></div><div class="hero-note"><span>●</span> Editor Web disponível · Não precisa instalar</div></section>
+<div class="container"><div class="showcase" aria-label="Exemplo ilustrativo do editor HTMLPAD++"><div class="showcase-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="showcase-title">HTMLPAD++ / index.html</span></div><div class="showcase-content"><div class="code"><span class="tag">&lt;main&gt;</span>
+  <span class="tag">&lt;h1&gt;</span>Olá, mundo!<span class="tag">&lt;/h1&gt;</span>
+  <span class="tag">&lt;p&gt;</span>Meu primeiro projeto.<span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="str">"btn"</span><span class="tag">&gt;</span>
+    Explorar
+  <span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/main&gt;</span>
 
-            <div class="w3-container w3-theme-d2">
-                <h2>HTMLPAD++</h2>
-                <p>
-                    Um editor em javascript, em breve mais atualizações.<br>
-                    Recomendo que use a versão para o seu dispositivo <b>(Desktop - Android)</b>. <i>Questão mesmo em parte viusual</i><br>
-                </p>
-            </div>
-            <div class="w3-container w3-light-grey w3-padding">
-                <button class="w3-button w3-right w3-white w3-border w3-round" onclick="document.getElementById('modal1').style.display='none'">Fechar</button>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="w3-display-middle w3-card-4 w3-round w3-padding w3-theme-d1">
-        <div class="w3-center">
-            <h2>HTMLPAD++ <span id="version"></span></h2>
-            <p>
-                Explore nosso editor de código online para HTML, CSS e JavaScript. Três abas separadas para edição, visualização em tempo real e destaque de sintaxe. Crie páginas web incríveis de maneira eficiente.
-            </p>
-        </div>
-        <div class="w3-row">
-            <div class="w3-col s6">
-                <button id="desktop" class="w3-block w3-button w3-blue w3-theme-d1 w3-hover-theme w3-theme-action"><i class="fas fa-desktop"></i> Desktop</button>
-            </div>
-            <div class="w3-col s6">
-                <button id="aplicativo" class="w3-block w3-button w3-blue w3-theme-d1 w3-hover-theme w3-theme-action"><i class="fab fa-android"></i> Android</button>
-            </div>
-        </div>
-    </div>
-
-<script>
-//Js
-$("#desktop").click(function(){
-    window.location.href="Desktop/index.html"
-})
-
-$("#aplicativo").click(function(){
-    window.alert("Ainda nao esta pronto.\nMas ja pode usar")
-    window.location.href="Aplicativo/index.html"
-})
-</script>
-</body>
-</html>
+<span class="tag">&lt;script&gt;</span>
+  console.log(<span class="str">"HTMLPAD++ pronto!"</span>);
+<span class="tag">&lt;/script&gt;</span></div><div class="mock-preview"><strong>Olá, mundo!</strong><p>Meu primeiro projeto.</p><span class="sample">Explorar</span></div><div class="mock-console"><strong>〉 Console</strong><span>✓</span> HTMLPAD++ pronto!</div></div></div></div>
+<section id="recursos" class="section container"><div class="section-heading"><div class="eyebrow">Tudo em um só lugar</div><h2>Ferramentas para tirar ideias do papel</h2><p>Do primeiro HTML ao protótipo de uma aplicação web.</p></div><div class="features"><article class="feature"><div class="symbol" aria-hidden="true">⌨</div><h3>Editor de código</h3><p>Trabalhe com HTML, CSS e JavaScript em abas separadas, com destaque de sintaxe e atalhos.</p></article><article class="feature"><div class="symbol" aria-hidden="true">▣</div><h3>Preview e console</h3><p>Veja sua página em execução e acompanhe mensagens e erros do JavaScript.</p></article><article class="feature"><div class="symbol" aria-hidden="true">▤</div><h3>Seus projetos</h3><p>Salve projetos no navegador, organize no explorador e exporte seus arquivos em ZIP.</p></article></div></section>
+<section id="futuro" class="section container"><div class="section-heading"><div class="eyebrow">O que vem por aí</div><h2>Uma base para crescer</h2><p>Ideias planejadas para as próximas etapas do HTMLPAD++.</p></div><div class="roadmap"><article class="roadmap-item"><h3>◫ Editor Web avançado</h3><p>Importação de projetos, múltiplos arquivos e pastas virtuais.</p><span class="state">Planejado</span></article><article class="roadmap-item"><h3>☁ HTMLPAD++ Cloud</h3><p>Projetos sincronizados e armazenamento em servidor, com PHP e contas de usuário.</p><span class="state">Ideia futura</span></article><article class="roadmap-item"><h3>▣ HTMLPAD++ Desktop</h3><p>Aplicativo para trabalhar com arquivos e pastas diretamente no computador.</p><span class="state">Ideia futura</span></article></div></section>
+<div class="container"><section class="cta"><h2>Seu próximo projeto começa aqui.</h2><p>Abra o editor e transforme uma ideia em código.</p><a class="btn btn-primary" href="Desktop/index.html">Abrir HTMLPAD++ →</a></section></div>
+</main>
+<footer class="footer"><div class="container footer-inner"><span>© <span id="year">2026</span> HTMLPAD++ · The Tapejara — A tecnologia ao seu alcance.</span><span><a href="Desktop/ajuda.html">Ajuda</a> · <a href="https://github.com/LuizBrunoST/HTMLPAD" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://thetapejara.com.br" target="_blank" rel="noopener noreferrer">The Tapejara</a></span></div></footer>
+<script>document.getElementById("year").textContent=String(new Date().getFullYear());</script>
+</body></html>
