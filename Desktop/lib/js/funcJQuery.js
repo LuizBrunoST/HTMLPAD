@@ -13,6 +13,7 @@ $("#btn-html").click( function () {
 })
 $("#btn-css").click( function () {
     $('#preview').hide()
+    $('#hp-preview-pane').hide()
     w3.show("#css")
     w3.hide("#html")
     w3.hide("#javascript")
@@ -23,6 +24,7 @@ $("#btn-css").click( function () {
 $("#btn-javascript").click( function () {
     w3.show("#javascript")
     $('#preview').hide()
+    $('#hp-preview-pane').hide()
     w3.hide("#html")
     w3.hide("#css")
     $(this).addClass("w3-theme-action")
@@ -36,7 +38,7 @@ $("#btn-preview").click(function() {
     $('#css').hide()
     $('#javascript').hide()
     $('#preview').show()\n    $('#hp-preview-pane').show()
-    $("#preview").attr("srcdoc", "<style>" + css.getValue("\n") + "</style>" + html.getValue("\n") + "<script>" + javascript.getValue("\n") + "<" + "/script>");
+    $("#preview").attr("srcdoc", window.hpBuildPreview());
 })
 $("#btn-salvar").click( function () {
     var element = document.createElement('a');
