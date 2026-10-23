@@ -39,6 +39,7 @@ function exportZIP(){
 function execute(action){
   if(action==="projects")showProjects();
   else if(action==="save")window.saveProject();
+  else if(action==="save-as")window.saveProjectAs();
   else if(action==="download")download("index.html",assembledHTML());
   else if(action==="zip")exportZIP();
   else if(action==="undo")selectEditor().undo();
