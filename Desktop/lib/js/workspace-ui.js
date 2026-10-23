@@ -128,6 +128,7 @@
         if(document.fullscreenElement){document.exitFullscreen();}
         else if(card&&card.requestFullscreen)card.requestFullscreen().catch(function(){alert("Tela cheia indisponível.");});
     });
+    document.addEventListener("hp-project-baseline",setBaseline);
     var version=document.getElementById("version");
     var statusVersion=document.getElementById("hp-version");
     if(version && statusVersion) statusVersion.textContent=version.textContent||"—";
