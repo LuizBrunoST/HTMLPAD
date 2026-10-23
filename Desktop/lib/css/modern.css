@@ -204,3 +204,29 @@ body.htmlpad-modern{background:var(--hp-bg)!important;color:var(--hp-text)!impor
 .hp-console.hp-console-collapsed .hp-console-chevron{transform:rotate(-90deg)}
 .htmlpad-modern .app-editor-card:fullscreen .hp-preview-pane{height:100%;min-height:0}
 @media(max-width:700px){.hp-editor-stage.hp-is-split .hp-preview-pane{min-height:350px}.hp-editor-stage.hp-is-split .hp-preview-pane #preview{min-height:250px!important}}
+
+/* Compact application header and collapsible explorer */
+.htmlpad-modern .app-topbar{position:fixed;z-index:7;top:0;left:0;right:0;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:12px;height:68px;padding:0 22px;background:#0b1424!important;border-bottom:1px solid #293c58}
+.hp-topbar-left,.hp-topbar-right{display:flex;align-items:center;gap:13px;min-width:0}
+.hp-topbar-icon,.hp-topbar-github{display:grid;place-items:center;width:34px;height:34px;flex-shrink:0;border:1px solid #2c4261;border-radius:9px;background:#14253c;color:#b9d0ee;text-decoration:none;cursor:pointer}
+.hp-topbar-icon:hover,.hp-topbar-github:hover{background:#254366;color:#fff}
+.hp-topbar-logo{display:grid;place-items:center;width:39px;height:39px;flex-shrink:0;border-radius:11px;background:linear-gradient(135deg,#1666e6,#42b1ff);color:#fff;text-decoration:none;font-size:18px}
+.hp-topbar-identity{display:flex;flex-direction:column;gap:3px;min-width:0;white-space:nowrap}
+.hp-topbar-name{display:flex;align-items:baseline;gap:0;font-size:18px;font-weight:800;letter-spacing:-.5px;line-height:1}
+.hp-topbar-name span{color:#f2f7ff}.hp-topbar-name strong{color:#65b9ff}
+.hp-topbar-identity small{font-size:10px;color:#9eb3d0;letter-spacing:.4px;white-space:nowrap}
+.hp-topbar-chip{display:flex;align-items:center;gap:7px;color:#9db8d9;font-size:12px;white-space:nowrap}
+.hp-topbar-chip i{color:#3bd0a1}
+.hp-mobile-menu{display:none}
+.hp-sidebar-expand{display:none;border:0;background:#1c3656;color:#9ac9ff;width:36px;height:36px;border-radius:9px;cursor:pointer;flex-shrink:0}
+@media(min-width:993px){
+ .htmlpad-modern .app-sidebar{transition:width .2s ease,padding .2s ease;box-sizing:border-box}
+ .htmlpad-modern .app-main{transition:margin-left .2s ease}
+ .htmlpad-modern.hp-sidebar-collapsed .app-sidebar{width:62px!important;padding:14px 8px!important;overflow-x:hidden}
+ .htmlpad-modern.hp-sidebar-collapsed .app-main{margin-left:62px!important}
+ .hp-sidebar-collapsed .hp-explorer-header{justify-content:center;padding:4px 0 12px}
+ .hp-sidebar-collapsed .hp-sidebar-expand{display:grid;place-items:center}
+ .hp-sidebar-collapsed .hp-explorer-brand,.hp-sidebar-collapsed .hp-projects-panel,.hp-sidebar-collapsed .hp-explorer-list,.hp-sidebar-collapsed .hp-sidebar-footer,.hp-sidebar-collapsed .hp-explorer>[data-adtap-bloco]{display:none!important}
+}
+@media(max-width:992px){.hp-desktop-menu{display:none}.hp-mobile-menu{display:grid}.htmlpad-modern .app-main{margin-left:0!important}}
+@media(max-width:600px){.htmlpad-modern .app-topbar{padding:0 12px;gap:8px}.hp-topbar-left,.hp-topbar-right{gap:9px}.hp-topbar-chip{display:none}.hp-topbar-identity small{font-size:9px}.hp-topbar-name{font-size:16px}.hp-topbar-logo{width:34px;height:34px}}
