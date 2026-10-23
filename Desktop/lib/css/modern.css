@@ -178,3 +178,29 @@ body.htmlpad-modern{background:var(--hp-bg)!important;color:var(--hp-text)!impor
 .hp-native-dialog footer button{border:1px solid #3a5678;border-radius:9px;background:#233c5c;color:#eaf3ff;padding:10px 16px;cursor:pointer;font-weight:600}
 .hp-native-dialog footer button[type=submit]{background:#2475d3;border-color:#2475d3;color:#fff}
 .hp-native-dialog footer button:hover{filter:brightness(1.14)}
+
+/* Preview console */
+.hp-preview-pane{display:none;flex-direction:column;min-width:0;min-height:0;background:#101b2c}
+.hp-preview-pane #preview{width:100%;flex:1;min-height:260px;display:block;border:0;background:white}
+.hp-editor-stage.hp-is-split .hp-preview-pane{display:flex!important;min-width:0;min-height:0}
+.htmlpad-modern .hp-editor-stage.hp-is-split .hp-preview-pane #preview{height:auto!important;min-height:200px!important;flex:1}
+.hp-console{display:flex;flex-direction:column;flex:0 0 190px;min-height:42px;max-height:55vh;border-top:2px solid #355171;background:#101b2d;color:#dceaff;font:12px system-ui,sans-serif}
+.hp-console-head{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:40px;padding:4px 10px;border-bottom:1px solid #2a405c}
+.hp-console-head button{border:0;background:transparent;color:#c2d8f4;cursor:pointer}
+#hp-console-toggle{display:flex;align-items:center;gap:8px;font-weight:700}
+#hp-console-toggle>i:first-child{color:#78b8ff}
+#hp-console-count{background:#263c58;border-radius:20px;padding:2px 7px;font-size:11px}
+.hp-console-chevron{font-size:10px;color:#8fa9c8}
+.hp-console-controls{display:flex;align-items:center;gap:10px}
+.hp-console-controls select{border:1px solid #365170;background:#1c304c;color:#e0edff;border-radius:6px;padding:5px;font:inherit}
+.hp-console-messages{overflow:auto;flex:1;min-height:0;padding:8px 12px}
+.hp-console-row{display:flex;gap:10px;padding:7px 3px;border-bottom:1px solid #23354c;align-items:flex-start;overflow-wrap:anywhere;white-space:pre-wrap}
+.hp-console-row i{flex:0 0 14px;color:#70b5ff;margin-top:2px}
+.hp-console-row.hp-console-warn{color:#f4cf86}.hp-console-row.hp-console-warn i{color:#f2b94e}
+.hp-console-row.hp-console-error{color:#ffaaa8}.hp-console-row.hp-console-error i{color:#ff7777}
+.hp-console-empty{margin:9px 0;color:#819cbd}
+.hp-console.hp-console-collapsed{flex-basis:42px}
+.hp-console.hp-console-collapsed .hp-console-messages{display:none}
+.hp-console.hp-console-collapsed .hp-console-chevron{transform:rotate(-90deg)}
+.htmlpad-modern .app-editor-card:fullscreen .hp-preview-pane{height:100%;min-height:0}
+@media(max-width:700px){.hp-editor-stage.hp-is-split .hp-preview-pane{min-height:350px}.hp-editor-stage.hp-is-split .hp-preview-pane #preview{min-height:250px!important}}
