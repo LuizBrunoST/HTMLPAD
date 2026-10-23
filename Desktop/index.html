@@ -116,7 +116,7 @@
             <label class="hp-project-search"><i class="fa-solid fa-magnifying-glass"></i><input id="hp-project-search" type="search" placeholder="Buscar projetos..." autocomplete="off" aria-label="Buscar projetos salvos"></label>
         </div>
         <div class="hp-explorer-list" id="savedProjects"></div>
-        <div class="hp-sidebar-footer"><i class="fa-solid fa-hard-drive"></i> Projetos neste navegador <i class="fa-solid fa-circle-info" title="Os projetos são armazenados localmente no navegador."></i></div>
+        <div class="hp-storage" aria-label="Armazenamento local dos projetos"><div class="hp-storage-label"><i class="fa-solid fa-hard-drive"></i><span>Armazenamento local</span></div><div class="hp-storage-track"><span id="hp-storage-bar"></span></div><small id="hp-storage-info">Calculando projetos...</small><small class="hp-storage-hint">Estimativa do localStorage; o limite varia por navegador.</small></div>
         <div data-adtap-bloco="5" data-adtap-formato="card"></div>
     </nav>
 
@@ -154,7 +154,8 @@
                         <button type="button" data-hp-action="fullscreen"><i class="fa-solid fa-expand"></i> Tela cheia</button>
                     </div></details>
                     <details class="hp-dropdown"><summary>Ajuda <i class="fa-solid fa-chevron-down"></i></summary><div class="hp-dropdown-content">
-                        <button type="button" data-hp-action="shortcuts"><i class="fa-solid fa-keyboard"></i> Atalhos</button>
+                        <a href="ajuda.html" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-book-open"></i> Central de ajuda</a>
+                         <button type="button" data-hp-action="shortcuts"><i class="fa-solid fa-keyboard"></i> Atalhos</button>
                         <button type="button" data-hp-action="about"><i class="fa-solid fa-circle-info"></i> Sobre</button>
                         <a href="https://github.com/LuizBrunoST/HTMLPAD" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
                     </div></details>
@@ -164,8 +165,6 @@
                     <button type="button" data-hp-action="preview" class="hp-run-button"><i class="fa-solid fa-play"></i> Executar</button>
                 </div>
             </div>
-
-            <div data-adtap-bloco="4" data-adtap-formato="native"></div>
 
 
             <div class="w3-card-4 w3-theme-l1 w3-margin-top app-editor-card" style="width: 100%; position: relative;">
@@ -226,6 +225,7 @@
     <script src="lib/js/workspace-ui.js"></script>
     <script src="lib/js/toolbar.js"></script>
     <script src="lib/js/sidebar-ui.js"></script>
+    <script src="lib/js/storage-ui.js"></script>
     <script src="lib/js/projects-v2.js"></script>
 
     <script>
