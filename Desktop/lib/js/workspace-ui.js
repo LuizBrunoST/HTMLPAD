@@ -7,7 +7,8 @@
     var split = false;
     var previewRefresh = null;
     var stage = document.getElementById("hp-editor-stage");
-    var preview = document.getElementById("preview");\n    var previewPane = document.getElementById("hp-preview-pane");
+    var preview = document.getElementById("preview");
+    var previewPane = document.getElementById("hp-preview-pane");
     var splitButton = document.getElementById("hp-tabs-split");
     function renderPreview() {
         preview.srcdoc = window.hpBuildPreview();
