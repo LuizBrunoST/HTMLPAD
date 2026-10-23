@@ -56,10 +56,10 @@
     // Existing project actions are global functions. Wrap without changing storage semantics.
     if(typeof window.saveProject==="function"){
         var originalSave=window.saveProject;
-        window.saveProject=function(){originalSave.apply(this,arguments);if(!dirty) return;
-            // Only clear the marker when a new saved project actually contains current code.
-            var projects=JSON.parse(localStorage.getItem("htmlpad")||"[]");
-            if(projects.some(function(p){return p.content && p.content.html===editors.html.getValue() && p.content.css===editors.css.getValue() && p.content.js===editors.javascript.getValue();})) setBaseline();
+        window.saveProject=function(){
+            var before=localStorage.getItem("htmlpad");
+            originalSave.apply(this,arguments);
+            if(localStorage.getItem("htmlpad")!==before) setBaseline();
         };
     }
     if(typeof window.loadProject==="function"){
