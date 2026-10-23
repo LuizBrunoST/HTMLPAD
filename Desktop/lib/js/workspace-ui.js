@@ -3,6 +3,37 @@
     "use strict";
     var names = {html:"HTML",css:"CSS",javascript:"JavaScript",preview:"Pré-visualização"};
     var active = "html";
+    var lastCodeTab = "html";
+    var split = false;
+    var previewRefresh = null;
+    var stage = document.getElementById("hp-editor-stage");
+    var preview = document.getElementById("preview");
+    var splitButton = document.getElementById("hp-tabs-split");
+    function renderPreview() {
+        var source = "<style>" + editors.css.getValue() + "</style>" + editors.html.getValue() + "<script>" + editors.javascript.getValue() + "<" + "/script>";
+        if(preview.srcdoc !== source) preview.srcdoc = source;
+    }
+    function queuePreview() {
+        if(!split)return;
+        clearTimeout(previewRefresh);
+        previewRefresh=setTimeout(renderPreview,400);
+    }
+    function layoutSplit() {
+        stage.classList.toggle("hp-is-split",split);
+        splitButton.classList.toggle("hp-split-active",split);
+        splitButton.setAttribute("aria-pressed",String(split));
+        if(split){
+            ["html","css","javascript"].forEach(function(id){document.getElementById(id).style.display=id===lastCodeTab?"block":"none";});
+            preview.style.display="block";
+            renderPreview();
+            requestAnimationFrame(function(){editors[lastCodeTab].resize();});
+        } else {
+            preview.style.display=active==="preview"?"block":"none";
+            ["html","css","javascript"].forEach(function(id){document.getElementById(id).style.display=active===id?"block":"none";});
+            if(active!=="preview")requestAnimationFrame(function(){editors[active].resize();});
+        }
+    }
+
     var dirty = false;
     var baselineValues = {};
     var baseline = null;
@@ -39,6 +70,7 @@
     }
     function selectTab(tab) {
         active = tab;
+        if(tab!=="preview")lastCodeTab=tab;
         language.textContent = names[tab];
         ["html","css","javascript","preview"].forEach(function(id){
             var button=document.getElementById("btn-"+id);
@@ -47,6 +79,7 @@
             button.setAttribute("aria-selected",String(id===tab));
         });
         refreshCursor();
+        if(split)layoutSplit();
         if (tab !== "preview") {
             requestAnimationFrame(function(){editors[tab].resize();});
         }
@@ -56,7 +89,7 @@
         if (btn) btn.addEventListener("click",function(){selectTab(id);});
     });
     Object.keys(editors).forEach(function(id){
-        editors[id].session.on("change",refreshDirty);
+        editors[id].session.on("change",function(){refreshDirty();queuePreview();});
         editors[id].selection.on("changeCursor",function(){if(active===id) refreshCursor();});
     });
     // Existing project actions are global functions. Wrap without changing storage semantics.
@@ -72,6 +105,16 @@
         var originalLoad=window.loadProject;
         window.loadProject=function(){originalLoad.apply(this,arguments);setBaseline();refreshCursor();};
     }
+    if(splitButton)splitButton.addEventListener("click",function(){
+        split=!split;
+        if(split && active==="preview"){
+            active=lastCodeTab;
+            var tab=document.getElementById("btn-"+lastCodeTab);
+            if(tab)tab.click();
+        }
+        layoutSplit();
+    });
+    window.addEventListener("resize",function(){if(split)editors[lastCodeTab].resize();});
     document.addEventListener("keydown",function(event){
         if((event.ctrlKey||event.metaKey) && !event.altKey && !event.shiftKey && /^[1-4]$/.test(event.key)){
             event.preventDefault();
