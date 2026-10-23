@@ -112,7 +112,7 @@
         </div>
         <div class="hp-projects-panel">
             <div class="hp-section-title"><span><i class="fa-solid fa-folder-open"></i> Meus projetos</span><span class="hp-count" id="hp-project-count">0</span></div>
-            <button type="button" class="hp-primary-button" onclick="saveProject()"><i class="fa-solid fa-plus"></i> Salvar projeto</button>
+            <button type="button" class="hp-primary-button" onclick="saveProjectAs()"><i class="fa-solid fa-plus"></i> Novo projeto</button>
             <label class="hp-project-search"><i class="fa-solid fa-magnifying-glass"></i><input id="hp-project-search" type="search" placeholder="Buscar projetos..." autocomplete="off" aria-label="Buscar projetos salvos"></label>
         </div>
         <div class="hp-explorer-list" id="savedProjects"></div>
@@ -136,6 +136,7 @@
                 <div class="hp-toolbar-menus">
                     <details class="hp-dropdown"><summary>Arquivo <i class="fa-solid fa-chevron-down"></i></summary><div class="hp-dropdown-content">
                         <button type="button" data-hp-action="save"><i class="fa-solid fa-floppy-disk"></i> Salvar projeto</button>
+                        <button type="button" data-hp-action="save-as"><i class="fa-solid fa-copy"></i> Salvar como...</button>
                         <button type="button" data-hp-action="projects"><i class="fa-solid fa-folder-open"></i> Abrir projeto</button>
                         <button type="button" data-hp-action="download"><i class="fa-solid fa-file-code"></i> Baixar HTML</button>
                         <button type="button" data-hp-action="zip"><i class="fa-solid fa-file-zipper"></i> Exportar ZIP</button>
@@ -198,11 +199,20 @@
     </main>
 
 
+    <dialog id="hp-project-dialog" class="hp-native-dialog" aria-labelledby="hp-dialog-title">
+        <form method="dialog" id="hp-project-form">
+            <header><div><h2 id="hp-dialog-title">Salvar projeto</h2><p id="hp-dialog-description">Informe o nome do projeto.</p></div><button type="button" id="hp-dialog-close" aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button></header>
+            <div id="hp-dialog-field"><label for="hp-dialog-name">Nome do projeto</label><input id="hp-dialog-name" type="text" maxlength="100" autocomplete="off" required></div>
+            <p id="hp-dialog-error" role="alert"></p>
+            <footer><button type="button" id="hp-dialog-cancel">Cancelar</button><button type="submit" id="hp-dialog-submit">Salvar</button></footer>
+        </form>
+    </dialog>
     <script src="lib/js/funcLoad.js"></script>
     <script src="lib/js/funcJQuery.js"></script>
     <script src="../versao.js"></script>
     <script src="lib/js/workspace-ui.js"></script>
     <script src="lib/js/toolbar.js"></script>
+    <script src="lib/js/projects-v2.js"></script>
 
     <script>
         // Get the Sidebar
