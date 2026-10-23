@@ -181,12 +181,16 @@
                     <button type="button" class="hp-file-tab hp-preview-tab" id="btn-preview" role="tab" aria-selected="false" aria-controls="preview" title="Ctrl+4">
                         <i class="fa-solid fa-eye"></i><span>Preview</span>
                     </button>
-                    <div class="hp-tab-tools"><span title="Visualização dividida será adicionada futuramente"><i class="fa-solid fa-table-columns"></i></span><button type="button" id="hp-tabs-fullscreen" title="Tela cheia" aria-label="Alternar tela cheia"><i class="fa-solid fa-expand"></i></button></div>
+                    <div class="hp-tab-tools"><button type="button" id="hp-tabs-split" title="Dividir editor e preview" aria-label="Alternar visualização dividida" aria-pressed="false"><i class="fa-solid fa-table-columns"></i></button><button type="button" id="hp-tabs-fullscreen" title="Tela cheia" aria-label="Alternar tela cheia"><i class="fa-solid fa-expand"></i></button></div>
                 </div>
-                <div id="html"></div>
-                <div id="css"></div>
-                <div id="javascript"></div>
-                <iframe id="preview" title="Pré-visualização do código"></iframe>
+                <div class="hp-editor-stage" id="hp-editor-stage">
+                    <div class="hp-code-pane" id="hp-code-pane">
+                        <div id="html"></div>
+                        <div id="css"></div>
+                        <div id="javascript"></div>
+                    </div>
+                    <iframe id="preview" title="Pré-visualização do código"></iframe>
+                </div>
                 <div class="app-statusbar" role="status"><span id="hp-current-language">HTML</span><span id="hp-position">Ln 1, Col 1</span><span id="hp-status" class="hp-saved">Pronto</span><span class="hp-status-version">HTMLPAD++ v<span id="hp-version">—</span></span></div>
             </div>
         </div>
