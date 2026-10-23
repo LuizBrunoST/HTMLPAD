@@ -3,7 +3,7 @@ css = ace.edit("css")
 javascript = ace.edit("javascript")
 
 $("#btn-html").click( function () {
-    $('#preview').hide()
+    $('#preview').hide()\n    $('#hp-preview-pane').hide()
     w3.show("#html")
     w3.hide("#css")
     w3.hide("#javascript")
@@ -35,7 +35,7 @@ $("#btn-preview").click(function() {
     $('#html').hide()
     $('#css').hide()
     $('#javascript').hide()
-    $('#preview').show()
+    $('#preview').show()\n    $('#hp-preview-pane').show()
     $("#preview").attr("srcdoc", "<style>" + css.getValue("\n") + "</style>" + html.getValue("\n") + "<script>" + javascript.getValue("\n") + "<" + "/script>");
 })
 $("#btn-salvar").click( function () {
