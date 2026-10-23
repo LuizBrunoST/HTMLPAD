@@ -93,20 +93,20 @@
     <!-- MODAL SOBRE FIM -->
     <!-- MODALS FIM -->
 
-    <!-- Top container -->
-    <div class="w3-bar w3-top w3-theme w3-large app-topbar" style="z-index:5">
-        <a href="./" class="w3-bar-item w3-hide-small">
-            <img src="icones/android-icon-36x36.png" height="30" alt="HTMLPAD++">
-        </a>
-        <span class="w3-bar-item w3-hide-small app-brand">HTML<span>PAD++</span><small>Crie. Desenvolva. Compartilhe.</small></span>
-        <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i> Menu</button>
-        
-        
-    </div>
+    <!-- Topbar -->
+    <header class="app-topbar" role="banner">
+        <div class="hp-topbar-left">
+            <button type="button" class="hp-topbar-icon hp-mobile-menu" id="hp-mobile-menu" onclick="w3_open()" aria-label="Abrir menu"><i class="fa-solid fa-bars"></i></button>
+            <button type="button" class="hp-topbar-icon hp-desktop-menu" id="hp-sidebar-toggle" aria-label="Recolher explorador" title="Recolher explorador" aria-expanded="true" aria-controls="mySidebar"><i class="fa-solid fa-panel-left"></i></button>
+            <a href="./" class="hp-topbar-logo" aria-label="HTMLPAD++ início"><i class="fa-solid fa-code"></i></a>
+            <div class="hp-topbar-identity"><div class="hp-topbar-name"><span>HTML</span><strong>PAD++</strong></div><small>Editor de código web</small></div>
+        </div>
+        <div class="hp-topbar-right"><span class="hp-topbar-chip"><i class="fa-solid fa-circle-check"></i> Workspace</span><a class="hp-topbar-github" href="https://github.com/LuizBrunoST/HTMLPAD" target="_blank" rel="noopener noreferrer" title="Repositório no GitHub" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></div>
+    </header>
 
     <!-- Explorador de projetos: mantém o armazenamento e as ações existentes -->
     <nav class="w3-sidebar w3-collapse w3-theme w3-animate-left app-sidebar hp-explorer" style="z-index:5;width:300px;" id="mySidebar">
-        <div class="hp-explorer-header">
+        <div class="hp-explorer-header"><button type="button" class="hp-sidebar-expand" id="hp-sidebar-expand" title="Expandir explorador" aria-label="Expandir explorador"><i class="fa-solid fa-angles-right"></i></button>
             <div class="hp-explorer-brand"><i class="fa-solid fa-code"></i><div><strong>HTMLPAD++</strong><small>EXPLORADOR</small></div></div>
             <button type="button" class="hp-icon-button w3-hide-large" onclick="w3_close()" aria-label="Fechar menu"><i class="fa-solid fa-xmark"></i></button>
         </div>
@@ -225,6 +225,7 @@
     <script src="lib/js/console.js"></script>
     <script src="lib/js/workspace-ui.js"></script>
     <script src="lib/js/toolbar.js"></script>
+    <script src="lib/js/sidebar-ui.js"></script>
     <script src="lib/js/projects-v2.js"></script>
 
     <script>
