@@ -133,3 +133,18 @@ body.htmlpad-modern{background:var(--hp-bg)!important;color:var(--hp-text)!impor
 .htmlpad-modern .app-editor-card:fullscreen{height:100vh;display:flex;flex-direction:column}
 .htmlpad-modern .app-editor-card:fullscreen #html,.htmlpad-modern .app-editor-card:fullscreen #css,.htmlpad-modern .app-editor-card:fullscreen #javascript,.htmlpad-modern .app-editor-card:fullscreen #preview{flex:1;height:auto;min-height:0}
 @media(max-width:700px){.hp-toolbar{gap:7px!important}.hp-toolbar-menus{order:3;width:100%;justify-content:space-between}.hp-toolbar-right>span{display:none}.hp-dropdown-content{width:170px}.hp-dropdown:last-child .hp-dropdown-content{left:auto;right:0}}
+
+/* File-style editor tabs */
+.htmlpad-modern .hp-file-tabs{display:flex;align-items:stretch;gap:2px;min-height:48px;padding:7px 10px 0;background:#0e192a!important;border-bottom:1px solid #2b405e;overflow-x:auto}
+.hp-file-tab{position:relative;flex:0 0 auto;display:flex;align-items:center;gap:9px;padding:11px 14px 12px;border:0;border-bottom:2px solid transparent;border-radius:8px 8px 0 0;background:#14243a;color:#b8cbe4;font:600 12px Inter,system-ui,sans-serif;cursor:pointer;white-space:nowrap}
+.hp-file-tab:hover{background:#1a3150;color:#f3f7ff}
+.hp-file-tabs .hp-file-tab.hp-tab-active{background:#203958!important;color:#fff!important;border-bottom-color:#408fff;box-shadow:none!important}
+.hp-file-tab i{font-size:15px}
+.hp-file-tab.hp-preview-tab{margin-left:8px;background:#13342f;color:#a4e5cb}
+.hp-file-tabs .hp-preview-tab.hp-tab-active{background:#1a4940!important;border-bottom-color:#43d6a0}
+.hp-tab-dirty{width:7px;height:7px;border-radius:50%;background:#f2b94e;display:none;flex-shrink:0}
+.hp-has-changes .hp-tab-dirty{display:inline-block}
+.hp-tab-tools{margin-left:auto;display:flex;align-items:center;gap:15px;padding:0 7px 7px 15px;color:#8ba3c3;font-size:13px}
+.hp-tab-tools button{border:0;background:transparent;color:#9cb5d5;cursor:pointer;padding:7px}
+.hp-tab-tools button:hover{color:#fff}
+@media(max-width:650px){.htmlpad-modern .hp-file-tabs{gap:1px;padding:6px 6px 0}.hp-file-tab{padding:9px 10px;font-size:11px;gap:6px}.hp-file-tab.hp-preview-tab{margin-left:2px}.hp-tab-tools{padding-left:5px;gap:8px}}
