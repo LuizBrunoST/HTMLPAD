@@ -148,3 +148,15 @@ body.htmlpad-modern{background:var(--hp-bg)!important;color:var(--hp-text)!impor
 .hp-tab-tools button{border:0;background:transparent;color:#9cb5d5;cursor:pointer;padding:7px}
 .hp-tab-tools button:hover{color:#fff}
 @media(max-width:650px){.htmlpad-modern .hp-file-tabs{gap:1px;padding:6px 6px 0}.hp-file-tab{padding:9px 10px;font-size:11px;gap:6px}.hp-file-tab.hp-preview-tab{margin-left:2px}.hp-tab-tools{padding-left:5px;gap:8px}}
+
+/* Split code + live preview, using the existing Ace instances. */
+.hp-editor-stage{width:100%;min-width:0}
+.hp-code-pane{min-width:0}
+.hp-editor-stage.hp-is-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;background:#0b1423}
+.hp-editor-stage.hp-is-split .hp-code-pane{min-width:0;border-right:2px solid #36577e}
+.htmlpad-modern .hp-editor-stage.hp-is-split #html,.htmlpad-modern .hp-editor-stage.hp-is-split #css,.htmlpad-modern .hp-editor-stage.hp-is-split #javascript,.htmlpad-modern .hp-editor-stage.hp-is-split #preview{width:100%;height:calc(100vh - 290px);min-height:380px;margin:0}
+.htmlpad-modern .hp-editor-stage.hp-is-split #preview{display:block!important;border:0;background:#fff}
+.hp-tab-tools button.hp-split-active{background:#234b73;color:#80c4ff;border-radius:7px}
+.htmlpad-modern .app-editor-card:fullscreen .hp-editor-stage{flex:1;min-height:0}
+.htmlpad-modern .app-editor-card:fullscreen .hp-editor-stage.hp-is-split #html,.htmlpad-modern .app-editor-card:fullscreen .hp-editor-stage.hp-is-split #css,.htmlpad-modern .app-editor-card:fullscreen .hp-editor-stage.hp-is-split #javascript,.htmlpad-modern .app-editor-card:fullscreen .hp-editor-stage.hp-is-split #preview{height:100%;min-height:0}
+@media(max-width:700px){.hp-editor-stage.hp-is-split{grid-template-columns:minmax(0,1fr);grid-template-rows:1fr 1fr}.hp-editor-stage.hp-is-split .hp-code-pane{border-right:0;border-bottom:2px solid #36577e}.htmlpad-modern .hp-editor-stage.hp-is-split #html,.htmlpad-modern .hp-editor-stage.hp-is-split #css,.htmlpad-modern .hp-editor-stage.hp-is-split #javascript,.htmlpad-modern .hp-editor-stage.hp-is-split #preview{height:45vh;min-height:250px}}
