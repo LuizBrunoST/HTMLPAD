@@ -160,3 +160,21 @@ body.htmlpad-modern{background:var(--hp-bg)!important;color:var(--hp-text)!impor
 .htmlpad-modern .app-editor-card:fullscreen .hp-editor-stage{flex:1;min-height:0}
 .htmlpad-modern .app-editor-card:fullscreen .hp-editor-stage.hp-is-split #html,.htmlpad-modern .app-editor-card:fullscreen .hp-editor-stage.hp-is-split #css,.htmlpad-modern .app-editor-card:fullscreen .hp-editor-stage.hp-is-split #javascript,.htmlpad-modern .app-editor-card:fullscreen .hp-editor-stage.hp-is-split #preview{height:100%;min-height:0}
 @media(max-width:700px){.hp-editor-stage.hp-is-split{grid-template-columns:minmax(0,1fr);grid-template-rows:1fr 1fr}.hp-editor-stage.hp-is-split .hp-code-pane{border-right:0;border-bottom:2px solid #36577e}.htmlpad-modern .hp-editor-stage.hp-is-split #html,.htmlpad-modern .hp-editor-stage.hp-is-split #css,.htmlpad-modern .hp-editor-stage.hp-is-split #javascript,.htmlpad-modern .hp-editor-stage.hp-is-split #preview{height:45vh;min-height:250px}}
+
+/* Native project dialog: independent of w3.css */
+.hp-native-dialog{position:fixed;inset:0;margin:auto;width:min(430px,calc(100vw - 30px));max-height:calc(100vh - 40px);overflow:auto;padding:0;border:1px solid #365579;border-radius:16px;background:#162741;color:#e7f1ff;box-shadow:0 22px 65px #0009;font:14px system-ui,sans-serif}
+.hp-native-dialog:not([open]){display:none}
+.hp-native-dialog::backdrop{background:rgba(2,8,20,.74);backdrop-filter:blur(4px)}
+.hp-native-dialog form{padding:24px}
+.hp-native-dialog header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:20px}
+.hp-native-dialog h2{margin:0 0 8px;font-size:20px;font-weight:700;color:#fff}
+.hp-native-dialog header p{margin:0;font-size:13px;color:#a6bad6;line-height:1.5}
+.hp-native-dialog header button{background:transparent;border:0;color:#9fb7d4;cursor:pointer;font-size:16px}
+.hp-native-dialog label{display:block;font-size:12px;margin-bottom:8px;color:#c4d6ec}
+.hp-native-dialog input{display:block;box-sizing:border-box;width:100%;background:#0e1c31;color:#fff;border:1px solid #42628a;border-radius:9px;padding:12px;outline:0;font:inherit}
+.hp-native-dialog input:focus{border-color:#5ea5ff;box-shadow:0 0 0 3px #3989e32c}
+.hp-native-dialog #hp-dialog-error{min-height:18px;color:#ff9b9b;font-size:12px;margin:8px 0}
+.hp-native-dialog footer{display:flex;justify-content:flex-end;gap:10px}
+.hp-native-dialog footer button{border:1px solid #3a5678;border-radius:9px;background:#233c5c;color:#eaf3ff;padding:10px 16px;cursor:pointer;font-weight:600}
+.hp-native-dialog footer button[type=submit]{background:#2475d3;border-color:#2475d3;color:#fff}
+.hp-native-dialog footer button:hover{filter:brightness(1.14)}
