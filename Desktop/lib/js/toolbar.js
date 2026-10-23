@@ -55,7 +55,7 @@ function execute(action){
     else if(el&&el.requestFullscreen)el.requestFullscreen().catch(function(){alert("Tela cheia indisponível neste navegador.");});
   }
   else if(action==="about")document.getElementById("modal-sobre").style.display="block";
-  else if(action==="shortcuts")alert("Atalhos do editor Ace:\nCtrl+F: localizar\nCtrl+Z: desfazer\nCtrl+Shift+Z: refazer\nCtrl+A: selecionar tudo\nCtrl+S: salvar projeto (HTMLPAD++)");
+  else if(action==="shortcuts")window.open("ajuda.html#atalhos","_blank","noopener,noreferrer");
 }
 toolbar.addEventListener("click",function(event){
   var button=event.target.closest("[data-hp-action]");
