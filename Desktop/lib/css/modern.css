@@ -60,3 +60,49 @@ body.htmlpad-modern{background:var(--hp-bg)!important;color:var(--hp-text)!impor
 .app-statusbar #hp-status.hp-dirty{color:#ffd38b}
 .app-statusbar .hp-status-version{color:#7c91b1}
 @media(max-width:600px){.app-statusbar{gap:9px;font-size:10px;flex-wrap:wrap}.app-statusbar #hp-status{margin-left:0}.app-statusbar .hp-status-version{margin-left:auto}}
+
+/* Project explorer */
+.hp-explorer{display:flex;flex-direction:column;gap:12px;padding:20px 12px!important}
+.hp-explorer-header{display:flex;align-items:center;justify-content:space-between;padding:4px 8px 14px;border-bottom:1px solid var(--hp-border)}
+.hp-explorer-brand{display:flex;align-items:center;gap:11px}
+.hp-explorer-brand>i{display:grid;place-items:center;width:39px;height:39px;border-radius:10px;background:#174a9b;color:#fff}
+.hp-explorer-brand strong{display:block;font-size:16px;color:#f1f7ff}
+.hp-explorer-brand small{display:block;font-size:9px;color:#91a9cb;letter-spacing:2px}
+.hp-icon-button{border:0;background:transparent;color:#c1d3eb;padding:8px}
+.hp-projects-panel{background:#142640;border:1px solid #254264;border-radius:12px;padding:13px 11px}
+.hp-section-title{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:750;margin-bottom:12px}
+.hp-section-title i{color:#69b0ff;margin-right:6px}
+.hp-count{border-radius:100px;background:#263d5b;color:#c5d7f2;padding:2px 8px;font-size:11px}
+.hp-primary-button{width:100%;background:#226aef;border:1px solid #458dff;border-radius:9px;padding:10px;color:#fff;font-size:12px;font-weight:750;cursor:pointer}
+.hp-primary-button:hover{background:#3483ff}
+.hp-project-search{margin-top:11px;display:flex;align-items:center;gap:8px;background:#0b1729;border:1px solid #29425f;border-radius:8px;padding:0 10px;color:#88a3c7}
+.hp-project-search:focus-within{border-color:#458dff}
+.hp-project-search input{min-width:0;width:100%;border:0;outline:0;background:transparent;color:#eef5ff;padding:10px 0;font-size:12px}
+.hp-project-search input::placeholder{color:#7892b5}
+.hp-explorer-list{flex:0 0 auto;min-height:40px}
+.hp-project-folder{border:1px solid transparent;border-radius:10px;margin-bottom:5px}
+.hp-project-folder[open]{background:#132540;border-color:#2b4567}
+.hp-folder-header{display:flex;align-items:center;gap:9px;padding:11px 9px;cursor:pointer;list-style:none;color:#d7e6fc;font-size:12px}
+.hp-folder-header::-webkit-details-marker{display:none}
+.hp-folder-header:hover{background:#1b3151;border-radius:9px}
+.hp-chevron{font-size:9px;color:#94a9c9;transition:transform .15s}
+.hp-project-folder[open] .hp-chevron{transform:rotate(90deg)}
+.hp-folder-icon{color:#f5c451;font-size:15px}
+.hp-project-folder[open] .hp-folder-icon{color:#fbd77b}
+.hp-folder-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hp-project-menu{position:relative;margin-left:auto}
+.hp-menu-trigger{list-style:none;display:grid;place-items:center;width:26px;height:26px;border-radius:7px;color:#adc2e0;cursor:pointer}
+.hp-menu-trigger::-webkit-details-marker{display:none}
+.hp-menu-trigger:hover,.hp-project-menu[open] .hp-menu-trigger{background:#2b4466}
+.hp-menu-actions{position:absolute;right:0;top:28px;z-index:20;width:140px;background:#1a2e4b;border:1px solid #365479;border-radius:9px;box-shadow:0 10px 24px #0009;padding:4px}
+.hp-menu-actions button{display:block;width:100%;border:0;border-radius:6px;background:transparent;color:#e6f0ff;padding:9px;text-align:left;font-size:12px;cursor:pointer}
+.hp-menu-actions button:hover{background:#2a4a73}
+.hp-menu-actions button:last-child{color:#ffaaaa}
+.hp-project-files{padding:1px 8px 10px 28px}
+.hp-file-entry{width:100%;display:flex;align-items:center;gap:11px;padding:8px;border:0;border-radius:7px;background:transparent;color:#b9cde7;text-align:left;font-size:12px;cursor:pointer}
+.hp-file-entry:hover{background:#23446b;color:#fff}
+.hp-html-icon{color:#ff925d}.hp-css-icon{color:#69b7ff}.hp-js-icon{color:#f6d55c}
+.hp-empty-projects{padding:12px 10px;color:#839bbd;font-size:12px}
+.hp-sidebar-footer{display:flex;align-items:center;gap:8px;color:#8ba2c2;border-top:1px solid #283e5a;padding:14px 8px;font-size:11px}
+.hp-sidebar-footer .fa-circle-info{margin-left:auto}
+.hp-explorer .adMax3{margin-top:6px}
