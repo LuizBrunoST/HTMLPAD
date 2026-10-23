@@ -182,49 +182,6 @@ function loadProjects() {
     }
 }
 document.getElementById("hp-project-search")?.addEventListener("input", loadProjects);
-loadProjects() {
-    var savedProjects = document.getElementById("savedProjects");
-    savedProjects.replaceChildren();
-    var projects = JSON.parse(localStorage.getItem("htmlpad") || "[]");
-
-    projects.forEach(function(project) {
-        var projectName = project.projeto;
-        var option = document.createElement("div");
-        option.classList.add("w3-bar-item", "w3-button", "w3-padding");
-        option.setAttribute("role", "button");
-        option.tabIndex = 0;
-
-        var name = document.createElement("span");
-        var folderIcon = document.createElement("i");
-        folderIcon.className = "fa-solid fa-folder";
-        folderIcon.setAttribute("aria-hidden", "true");
-        name.appendChild(folderIcon);
-        name.appendChild(document.createTextNode(" " + projectName + " "));
-        option.appendChild(name);
-
-        var actions = document.createElement("span");
-        actions.classList.add("w3-right");
-        actions.appendChild(createProjectAction(
-            "fa-solid fa-download", "w3-blue", "Baixar projeto " + projectName,
-            function() { downloadProject(projectName); }
-        ));
-        actions.appendChild(document.createTextNode(" "));
-        actions.appendChild(createProjectAction(
-            "fa-solid fa-trash", "w3-red", "Excluir projeto " + projectName,
-            function() { deleteProject(projectName); }
-        ));
-        option.appendChild(actions);
-
-        option.addEventListener("click", function() { loadProject(projectName); });
-        option.addEventListener("keydown", function(event) {
-            if (event.target === option && (event.key === "Enter" || event.key === " ")) {
-                event.preventDefault();
-                loadProject(projectName);
-            }
-        });
-        savedProjects.appendChild(option);
-    });
-}
 loadProjects()
 // Função para carregar um projeto salvo
 function loadProject(project) {
