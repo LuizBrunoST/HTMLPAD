@@ -106,3 +106,6 @@ body.htmlpad-modern{background:var(--hp-bg)!important;color:var(--hp-text)!impor
 .hp-sidebar-footer{display:flex;align-items:center;gap:8px;color:#8ba2c2;border-top:1px solid #283e5a;padding:14px 8px;font-size:11px}
 .hp-sidebar-footer .fa-circle-info{margin-left:auto}
 .hp-explorer .adMax3{margin-top:6px}
+
+/* Keep the original mobile hamburger/overlay behavior. */
+@media(max-width:992px){.hp-explorer{display:none}}
