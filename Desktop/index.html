@@ -190,7 +190,19 @@
                         <div id="css"></div>
                         <div id="javascript"></div>
                     </div>
-                    <iframe id="preview" title="Pré-visualização do código"></iframe>
+                    <div class="hp-preview-pane" id="hp-preview-pane">
+                        <iframe id="preview" title="Pré-visualização do código"></iframe>
+                        <section class="hp-console" id="hp-console" aria-label="Console do preview">
+                            <div class="hp-console-head">
+                                <button type="button" id="hp-console-toggle" aria-expanded="true"><i class="fa-solid fa-terminal"></i> Console <span id="hp-console-count">0</span> <i class="fa-solid fa-chevron-down hp-console-chevron"></i></button>
+                                <div class="hp-console-controls">
+                                    <select id="hp-console-filter" aria-label="Filtrar mensagens"><option value="all">Todas</option><option value="log">Logs</option><option value="info">Informações</option><option value="warn">Avisos</option><option value="error">Erros</option></select>
+                                    <button type="button" id="hp-console-clear" title="Limpar console" aria-label="Limpar console"><i class="fa-solid fa-trash-can"></i></button>
+                                </div>
+                            </div>
+                            <div id="hp-console-messages" class="hp-console-messages" role="log" aria-live="polite"><p class="hp-console-empty">Execute o preview para visualizar as mensagens.</p></div>
+                        </section>
+                    </div>
                 </div>
                 <div class="app-statusbar" role="status"><span id="hp-current-language">HTML</span><span id="hp-position">Ln 1, Col 1</span><span id="hp-status" class="hp-saved">Pronto</span><span class="hp-status-version">HTMLPAD++ v<span id="hp-version">—</span></span></div>
             </div>
@@ -210,6 +222,7 @@
     <script src="lib/js/funcLoad.js"></script>
     <script src="lib/js/funcJQuery.js"></script>
     <script src="../versao.js"></script>
+    <script src="lib/js/console.js"></script>
     <script src="lib/js/workspace-ui.js"></script>
     <script src="lib/js/toolbar.js"></script>
     <script src="lib/js/projects-v2.js"></script>
