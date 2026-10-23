@@ -24,11 +24,13 @@
         splitButton.setAttribute("aria-pressed",String(split));
         if(split){
             ["html","css","javascript"].forEach(function(id){document.getElementById(id).style.display=id===lastCodeTab?"block":"none";});
-            previewPane.style.display="flex";\n            preview.style.display="block";
+            previewPane.style.display="flex";
+            preview.style.display="block";
             renderPreview();
             requestAnimationFrame(function(){editors[lastCodeTab].resize();});
         } else {
-            previewPane.style.display=active==="preview"?"flex":"none";\n            preview.style.display=active==="preview"?"block":"none";
+            previewPane.style.display=active==="preview"?"flex":"none";
+            preview.style.display=active==="preview"?"block":"none";
             ["html","css","javascript"].forEach(function(id){document.getElementById(id).style.display=active===id?"block":"none";});
             if(active!=="preview")requestAnimationFrame(function(){editors[active].resize();});
         }
