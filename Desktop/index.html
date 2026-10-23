@@ -26,6 +26,7 @@
 
     <link rel="stylesheet" href="lib/css/estilo.css">
     <link rel="stylesheet" href="lib/css/thema.css">
+    <link rel="stylesheet" href="lib/css/modern.css">
     <link rel="stylesheet" href="lib/css/w3.css">
     <link rel="stylesheet" href="lib/fontAwesome/css/all.min.css">
     <link rel="stylesheet" href="lib/fontAwesome/css/brands.css">
@@ -50,7 +51,7 @@
     </script>
 </head>
 
-<body class="w3-theme-l1">
+<body class="w3-theme-l1 htmlpad-modern">
 
     <div class="interAds w3-margin-top w3-margin-buttom" id="interAds"></div>
 
@@ -103,18 +104,18 @@
     <!-- MODALS FIM -->
 
     <!-- Top container -->
-    <div class="w3-bar w3-top w3-theme w3-large" style="z-index:5">
+    <div class="w3-bar w3-top w3-theme w3-large app-topbar" style="z-index:5">
         <a href="./" class="w3-bar-item w3-hide-small">
             <img src="icones/android-icon-36x36.png" height="30" alt="HTMLPAD++">
         </a>
-        <span class="w3-bar-item w3-hide-small" style="text-shadow: 0px 1px 1px #000;">HTMLPAD++</span>
+        <span class="w3-bar-item w3-hide-small app-brand">HTML<span>PAD++</span><small>Crie. Desenvolva. Compartilhe.</small></span>
         <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i> Menu</button>
         
         
     </div>
 
     <!-- Sidebar/menu -->
-    <nav class="w3-sidebar w3-collapse w3-theme w3-animate-left" style="z-index:5;width:300px;" id="mySidebar"><br>
+    <nav class="w3-sidebar w3-collapse w3-theme w3-animate-left app-sidebar" style="z-index:5;width:300px;" id="mySidebar"><br>
         <div class="w3-container w3-row">
             <div class="w3-col s4">
                 <img src="icones/android-icon-36x36.png" class="w3-circle w3-margin-right" style="width:46px">
@@ -127,8 +128,9 @@
             </div>
         </div>
         <hr>
-        <div class="w3-container">
-            <h5>Projetos</h5>
+        <div class="w3-container projects-heading">
+            <h5><i class="fa-solid fa-folder-open"></i> Meus projetos</h5>
+            <button type="button" class="w3-button w3-round app-new-project" onclick="saveProject()"><i class="fa-solid fa-plus"></i> Salvar projeto</button>
         </div>
         <div class="w3-bar-block">
             <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i> Close Menu</a>
@@ -142,10 +144,11 @@
     <!-- Overlay effect when opening sidebar on small screens -->
     <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-    <main id="editor-default" class="w3-main" style="margin-left:300px;margin-top:43px;">
+    <main id="editor-default" class="w3-main app-main" style="margin-left:300px;margin-top:43px;">
+        <div class="app-workspace-title"><div><span class="app-eyebrow">WORKSPACE / EDITOR</span><h1>Seu espaço de criação</h1><p>Escreva, teste e organize seus projetos web.</p></div><div class="app-workspace-actions"><button type="button" class="w3-button w3-round" onclick="saveProject()"><i class="fa-solid fa-floppy-disk"></i> Salvar projeto</button><a class="w3-button w3-round" href="https://github.com/LuizBrunoST/HTMLPAD" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a></div></div>
         <div class="w3-theme-l1 w3-animate-opacity">
 
-            <div class="w3-theme-l1 w3-bar" style="height: 38px;">
+            <div class="w3-theme-l1 w3-bar app-menubar">
                 <div class="w3-dropdown-hover">
                     <span class="w3-button">Arquivo</span>
                     <div class="w3-dropdown-content w3-bar-block" style="position: fixed; z-index:9999;">
@@ -195,8 +198,8 @@
             <div class="adMax1 w3-margin-top w3-margin-buttom" id="adMax1"></div>
 
 
-            <div class="w3-card-4 w3-theme-l1 w3-margin-top" style="width: 100%; position: relative;">
-                <div class="w3-bar w3-theme">
+            <div class="w3-card-4 w3-theme-l1 w3-margin-top app-editor-card" style="width: 100%; position: relative;">
+                <div class="w3-bar w3-theme app-editor-tabs">
                     <span class="w3-bar-item w3-theme-action w3-button w3-hover-theme" id="btn-html"><i
                             class="fab fa-html5"></i> html</span>
                     <span class="w3-bar-item w3-button w3-hover-theme" id="btn-css"><i class="fab fa-css3-alt"></i>
@@ -210,7 +213,7 @@
                 <div id="html"></div>
                 <div id="css"></div>
                 <div id="javascript"></div>
-                <iframe id="preview"></iframe>
+                <iframe id="preview" title="Pré-visualização do código"></iframe>
             </div>
 
             <div class="adMax2 w3-margin-top w3-margin-buttom" id="adMax2"></div>
