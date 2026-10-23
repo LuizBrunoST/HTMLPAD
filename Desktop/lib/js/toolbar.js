@@ -13,7 +13,7 @@ function selectEditor(){var e=editor();e.focus();return e;}
 function assembledHTML(){
   var markup=window.html.getValue();
   var styles="<style>"+window.css.getValue()+"</style>";
-  var scripts="<script>"+window.javascript.getValue().replace(/<\\/script/gi,"<\\/script")+"<"+"/script>";
+  var scripts="<script>"+window.javascript.getValue()+"<"+"/script>";
   return styles+markup+scripts;
 }
 function download(filename,content,type){
