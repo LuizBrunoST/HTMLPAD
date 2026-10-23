@@ -40,20 +40,10 @@
     <!-- jQuery UI -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-    <script>
-        (function (d, w) {
-            var s = d.createElement("script")
-            s.type = "text/javascript"
-            s.src = "https://api.thetapejara.com.br/api/pages/adsmax.js"
-            d.getElementsByTagName('head')[0].appendChild(s)
-        })(document, window)
-    </script>
+    <script src="https://anuncios.thetapejara.com.br/api/v2/public/adtap.js"></script>
 </head>
 
 <body class="w3-theme-l1 htmlpad-modern">
-
-    <div class="interAds w3-margin-top w3-margin-buttom" id="interAds"></div>
 
     <!-- MODALS -->
     <!-- MODAL SOBRE -->
@@ -127,7 +117,7 @@
         </div>
         <div class="hp-explorer-list" id="savedProjects"></div>
         <div class="hp-sidebar-footer"><i class="fa-solid fa-hard-drive"></i> Projetos neste navegador <i class="fa-solid fa-circle-info" title="Os projetos são armazenados localmente no navegador."></i></div>
-        <div class="adMax3 w3-margin-top w3-margin-buttom" id="adMax3"></div>
+        <div data-adtap-bloco="5" data-adtap-formato="card"></div>
     </nav>
 
     <!-- Overlay effect when opening sidebar on small screens -->
@@ -184,7 +174,7 @@
                 </div>
             </div>
 
-            <div class="adMax1 w3-margin-top w3-margin-buttom" id="adMax1"></div>
+            <div data-adtap-bloco="4" data-adtap-formato="native"></div>
 
 
             <div class="w3-card-4 w3-theme-l1 w3-margin-top app-editor-card" style="width: 100%; position: relative;">
@@ -205,10 +195,10 @@
                 <iframe id="preview" title="Pré-visualização do código"></iframe>
                 <div class="app-statusbar" role="status"><span id="hp-current-language">HTML</span><span id="hp-position">Ln 1, Col 1</span><span id="hp-status" class="hp-saved">Pronto</span><span class="hp-status-version">HTMLPAD++ v<span id="hp-version">—</span></span></div>
             </div>
-
-            <div class="adMax2 w3-margin-top w3-margin-buttom" id="adMax2"></div>
         </div>
+        <div data-adtap-bloco="4" data-adtap-formato="native"></div>
     </main>
+
 
     <script src="lib/js/funcLoad.js"></script>
     <script src="lib/js/funcJQuery.js"></script>
@@ -242,6 +232,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+
+    
 </body>
 
 </html>
