@@ -230,3 +230,13 @@ body.htmlpad-modern{background:var(--hp-bg)!important;color:var(--hp-text)!impor
 }
 @media(max-width:992px){.hp-desktop-menu{display:none}.hp-mobile-menu{display:grid}.htmlpad-modern .app-main{margin-left:0!important}}
 @media(max-width:600px){.htmlpad-modern .app-topbar{padding:0 12px;gap:8px}.hp-topbar-left,.hp-topbar-right{gap:9px}.hp-topbar-chip{display:none}.hp-topbar-identity small{font-size:9px}.hp-topbar-name{font-size:16px}.hp-topbar-logo{width:34px;height:34px}}
+
+/* Local project storage indicator */
+.hp-storage{padding:12px 9px;border-top:1px solid #293e59;display:grid;gap:7px;color:#a7bdd8;font-size:11px}
+.hp-storage-label{display:flex;align-items:center;gap:8px;font-weight:700;color:#c4d9f3}
+.hp-storage-label i{color:#6eb5ff}
+.hp-storage-track{height:6px;background:#243951;border-radius:12px;overflow:hidden}
+.hp-storage-track span{display:block;height:100%;width:0;background:linear-gradient(90deg,#2c8ef3,#55c6ff);border-radius:12px;transition:width .2s}
+.hp-storage-track span.hp-storage-warning{background:#efad43}
+.hp-storage-hint{color:#7f97b7;line-height:1.45}
+@media(min-width:993px){.hp-sidebar-collapsed .hp-storage{display:none}}
