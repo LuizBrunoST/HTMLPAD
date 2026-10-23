@@ -10,8 +10,7 @@
     var preview = document.getElementById("preview");\n    var previewPane = document.getElementById("hp-preview-pane");
     var splitButton = document.getElementById("hp-tabs-split");
     function renderPreview() {
-        var source = "<style>" + editors.css.getValue() + "</style>" + editors.html.getValue() + "<script>" + editors.javascript.getValue() + "<" + "/script>";
-        if(preview.srcdoc !== source) preview.srcdoc = source;
+        preview.srcdoc = window.hpBuildPreview();
     }
     function queuePreview() {
         if(!split)return;
